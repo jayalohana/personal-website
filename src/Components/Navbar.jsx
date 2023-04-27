@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const Section = styled.div`
   display: flex;
+  // postion: fixed;
   justify-content: center;
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -12,6 +12,7 @@ const Section = styled.div`
 
 const Container = styled.div`
   width: 1400px;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +44,10 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
+  span {
+    color: #fff;
+  }
+
 `;
 
 const Icons = styled.div`
@@ -71,22 +76,46 @@ const Button = styled.button`
 `;
 
 const Navbar = () => {
+  const handleLinkClick = (path) => {
+    window.history.pushState(null, null, path);
+    // window.location.reload();
+  };
+
+  const currentPath = window.location.pathname;
+
   return (
     <Section>
       <Container>
         <Links>
           <Logo src="./img/logo-cutout.png" />
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>About</ListItem>
-            <ListItem>Projects</ListItem>
-            <ListItem>Experience</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem><a 
+              href="#Home"
+              onClick={() => handleLinkClick("Home")}
+            > <span>Home</span></a></ListItem>
+            <ListItem><a 
+              href="#About"
+              onClick={() => handleLinkClick("About")}
+            > <span>About</span></a></ListItem>
+            <ListItem><a 
+              href="#Projects"
+              onClick={() => handleLinkClick("Projects")}
+            > <span>Projects</span></a></ListItem>
+            <ListItem><a 
+              href="#Experience"
+              onClick={() => handleLinkClick("Experience")}
+            > <span>Experience</span></a></ListItem>
+            <ListItem><a 
+              href="#Contact"
+              onClick={() => handleLinkClick("Contact")}
+            > <span>Contact</span></a></ListItem>
           </List>
         </Links>
         <Icons>
           <Icon src="./img/search.png" />
-          <a href="Jaya Lohana (1).pdf"><Button>Download Resume</Button></a>
+          <a href="jayalohana/portfolio-website/Jaya Lohana (1).pdf">
+            <Button>Resume</Button>
+          </a>
         </Icons>
       </Container>
     </Section>

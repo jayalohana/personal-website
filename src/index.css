@@ -67,11 +67,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-body {
+/* body {
   margin: 0;
   font-family: inherit;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */

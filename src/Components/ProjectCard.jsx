@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { FaGithub } from "react-icons/fa";
 
 const Card = styled.div`
   border: 1px solid #ccc;
@@ -46,8 +46,8 @@ const Description = styled.p`
 `;
 
 const Link = styled.a`
-color: #fff
-  font-size: 18px;
+  color: #fff
+  font-size: 25px;
   margin-top: 10px;
 `;
 
@@ -63,7 +63,7 @@ const ProjectCard = ({ project }) => {
       <Image src={project.image} alt={project.title} />
       <Title>{project.title}</Title>
       <Description>{project.description}</Description>
-      <Link href={project.url}>View project</Link>
+      <Link href={project.url}><FaGithub color="#fff" size={30} /></Link>
     </Card>
   );
 };

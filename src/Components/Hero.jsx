@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import About from "./About";
 
 const Section = styled.div`
   height: 100vh;
@@ -49,7 +48,7 @@ const Title = styled.h1`
   }
 `;
 
-const WhatWeDo = styled.div`
+const Intro = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -63,7 +62,7 @@ const Subtitle = styled.h2`
   color: #da4ea2;
 `;
 
-const Desc = styled.p`
+const Description = styled.p`
   font-size: 24px;
   color: lightgray;
   @media only screen and (max-width: 768px) {
@@ -97,8 +96,8 @@ const Right = styled.div`
 `;
 
 const Img = styled.img`
-  width: 800px;
-  height: 600px;
+  width: 900px;
+  height: 700px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -113,38 +112,42 @@ const Img = styled.img`
   }
   @keyframes animate {
     to {
-      transform: translateY(20px);
+      transform: translateY(25px);
+      // transform: translateX(20px);
     }
   }
 `;
 
 const Hero = () => {
+
   return (
     <Section>
       <Navbar />
       <Container>
         <Left>
           <Title>jaya lohana</Title>
-          <WhatWeDo>
+          <Intro>
             <Line src="./img/line.png" />
-            <Subtitle>Who am I?</Subtitle>
-          </WhatWeDo>
-          <Desc>
-            {/* - welcome to my little corner of the internet! As a second-year
-            computer science student, I'm on a mission to conquer new frameworks
-            and make some cute code creations along the way. 
-            -greetings, fellow
-            techies! I'm a second-year computer science student with a passion
-            for all things coding. Follow along as I learn new frameworks and
-            create some cute and quirky projects.  */}
-            second-year computer science
-            student who loves experimenting with new frameworks and developing
-            my skills.
-          </Desc>
-          <Button>About me</Button>
+            <Subtitle>who am I?</Subtitle>
+          </Intro>
+          <Description>
+            second-year computer science student who loves experimenting with
+            new frameworks and developing my skills.
+          </Description>
+          <Button>About me</Button> 
         </Left>
         <Right>
-        {/* <Canvas camera={{fov:25, position: [5, 5, 5] }}>
+          <Img src="./img/cutout.png" />
+        </Right>
+      </Container>
+    </Section>
+  );
+};
+
+export default Hero;
+
+{
+  /* <Canvas camera={{fov:25, position: [5, 5, 5] }}>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
@@ -158,12 +161,17 @@ const Hero = () => {
                 />
               </Sphere>
             </Suspense>
-          </Canvas> */}
-          <Img src="./img/cutout.png" />
-        </Right>
-      </Container>
-    </Section>
-  );
-};
+          </Canvas> */
+}
+{
+  /* - welcome to my little corner of the internet! As a second-year
+            computer science student, I'm on a mission to conquer new frameworks
+            and make some cute code creations along the way. 
+            -greetings, fellow
+            techies! I'm a second-year computer science student with a passion
+            for all things coding. Follow along as I learn new frameworks and
+            create some cute and quirky projects.  */
+}
 
-export default Hero;
+// import { Canvas } from "@react-three/fiber";
+// import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";

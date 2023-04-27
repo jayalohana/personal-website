@@ -1,113 +1,185 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const experiences = [
-  {
-    id: 1,
-    date: 'June 2019',
-    title: 'Hiking in the Swiss Alps',
-    description: 'I went hiking in the Swiss Alps with a group of friends and it was one of the most beautiful experiences of my life. The views were breathtaking and the fresh mountain air was invigorating. We hiked for several hours and stopped for a picnic lunch in a meadow overlooking a glacier. I highly recommend this experience to anyone who loves the outdoors!'
-  },
-  {
-    id: 2,
-    date: 'August 2020',
-    title: 'Biking through the Netherlands',
-    description: 'I rented a bike and rode through the Dutch countryside, stopping in small towns along the way. The scenery was stunning and the bike paths were well-maintained. I even saw some windmills! This was a great way to experience the Netherlands.'
-  },
-  {
-    id: 3,
-    date: 'January 2021',
-    title: 'Exploring the temples of Angkor Wat',
-    description: 'I visited Angkor Wat in Cambodia and it was an incredible experience. The temples were awe-inspiring and the history behind them was fascinating. I hired a guide who explained the significance of each temple and showed me the best spots for photos. This was definitely a bucket-list experience for me.'
-  },
-  {
-    id: 4,
-    date: 'July 2019',
-    title: 'Safari in Tanzania',
-    description: 'I went on a safari in Tanzania and saw so many amazing animals in their natural habitat. We saw lions, elephants, giraffes, and more. Our guide was very knowledgeable and made sure we had a great experience. This was a once-in-a-lifetime trip!'
-  },
-  {
-    id: 5,
-    date: 'October 2020',
-    title: 'Learning to surf in Hawaii',
-    description: 'I took a surf lesson in Hawaii and it was so much fun! The waves were perfect for beginners and the instructor was very patient. I was able to stand up on the board a few times and it was a great feeling. This was a great way to experience the Hawaiian culture and lifestyle.'
-  },
-  {
-    id: 6,
-    date: 'May 2021',
-    title: 'Skydiving in New Zealand',
-    description: 'I went skydiving in New Zealand and it was an adrenaline rush like no other. The views were incredible as we jumped out of the plane and free-fell for what felt like forever. The parachute opened and we gently floated back to the ground. This was a once-in-a-lifetime experience that I will never forget.'
-  }
-];
+// const PageWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+// //   background-color: #f5f5f5;
+//   scroll-snap-align: center;
+// `;
 
-const ExperiencesWrapper = styled.div`
+const Section = styled.div``;
+
+const PageWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+//   background-color: #f7f7f7;
+  font-family: 'Open Sans', sans-serif;
+  scroll-snap-align: center;
 `;
 
-const ExperienceCard = styled.div`
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 16px;
-  width: 300px;
-  cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-  }
-`;
-const ExperienceDetails = styled.div`
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 16px;
-  margin-top: 16px;
-  width: 100%;
+const ExperienceSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+//   background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
 `;
 
 const ExperienceTitle = styled.h2`
-  font-size: 24px;
-  margin: 0 0 8px 0;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #fff;
+  text-align: center;
+`;
+
+const ExperienceList = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ExperienceItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+  width: 45%;
+  max-width: 400px;
+`;
+
+const ExperienceLogo = styled.img`
+  height: 80px;
+  margin-bottom: 20px;
+`;
+
+const ExperienceInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const ExperienceCompany = styled.h3`
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+`;
+
+const ExperienceRole = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #666;
+  text-align: center;
 `;
 
 const ExperienceDate = styled.p`
-  font-size: 14px;
-  color: #666;
-  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #888;
+  text-align: center;
 `;
 
 const ExperienceDescription = styled.p`
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #666;
+  text-align: center;
 `;
 
 function Experience() {
-  const [selectedExperience, setSelectedExperience] = useState(null);
-
-  const handleExperienceClick = (experience) => {
-    setSelectedExperience(experience);
-  };
-
   return (
-    <ExperiencesWrapper>
-      {experiences.map((experience) => (
-        <ExperienceCard key={experience.id} onClick={() => handleExperienceClick(experience)}>
-          <ExperienceTitle>{experience.title}</ExperienceTitle>
-          <ExperienceDate>{experience.date}</ExperienceDate>
-        </ExperienceCard>
-      ))}
-      {selectedExperience && (
-        <ExperienceDetails>
-          <ExperienceTitle>{selectedExperience.title}</ExperienceTitle>
-          <ExperienceDate>{selectedExperience.date}</ExperienceDate>
-          <ExperienceDescription>{selectedExperience.description}</ExperienceDescription>
-        </ExperienceDetails>
-      )}
-    </ExperiencesWrapper>
+  <Section id = 'Experience'>
+    <PageWrapper>
+      <ExperienceSection>
+        <ExperienceTitle>work experience</ExperienceTitle>
+        <ExperienceList>
+          <ExperienceItem>
+            <ExperienceLogo
+              src="/assets/company-a-logo.png"
+              alt="Company A logo"
+            />
+            <ExperienceInfo>
+              <ExperienceCompany>Company A</ExperienceCompany>
+              <ExperienceRole>Software Engineer</ExperienceRole>
+              <ExperienceDate>January 2020 - Present</ExperienceDate>
+              <ExperienceDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                sed magna euismod, malesuada est id, aliquet nunc.
+              </ExperienceDescription>
+            </ExperienceInfo>
+          </ExperienceItem>
+          <ExperienceItem>
+            <ExperienceLogo
+              src="/assets/company-b-logo.png"
+              alt="Company B logo"
+            />
+            <ExperienceInfo>
+              <ExperienceCompany>Company B</ExperienceCompany>
+              <ExperienceRole>Web Developer</ExperienceRole>
+              <ExperienceDate>June 2018 - December 2019</ExperienceDate>
+              <ExperienceDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                sed magna euismod, malesuada est id, aliquet nunc.
+              </ExperienceDescription>
+            </ExperienceInfo>
+          </ExperienceItem>
+          <ExperienceItem>
+            <ExperienceLogo
+              src="/assets/company-b-logo.png"
+              alt="Company B logo"
+            />
+            <ExperienceInfo>
+              <ExperienceCompany>Company B</ExperienceCompany>
+              <ExperienceRole>Web Developer</ExperienceRole>
+              <ExperienceDate>June 2018 - December 2019</ExperienceDate>
+              <ExperienceDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                sed magna euismod, malesuada est id, aliquet nunc.
+              </ExperienceDescription>
+            </ExperienceInfo>
+          </ExperienceItem>
+          <ExperienceItem>
+            <ExperienceLogo
+              src="/assets/company-b-logo.png"
+              alt="Company B logo"
+            />
+            <ExperienceInfo>
+              <ExperienceCompany>Company B</ExperienceCompany>
+              <ExperienceRole>Web Developer</ExperienceRole>
+              <ExperienceDate>June 2018 - December 2019</ExperienceDate>
+              <ExperienceDescription>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                sed magna euismod, malesuada est id, aliquet nunc.
+              </ExperienceDescription>
+            </ExperienceInfo>
+          </ExperienceItem>
+        </ExperienceList>
+      </ExperienceSection>
+    </PageWrapper>
+    </Section>
   );
 }
 
