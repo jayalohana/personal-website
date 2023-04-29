@@ -13,6 +13,9 @@ const PageWrapper = styled.div`
   align-items: center;
   height: 100vh;
   scroll-snap-align: center;
+  // @media only screen and (max-width: 768px) {
+  //   flex-direction: column;
+  // }
 `;
 
 const Form = styled.div`
@@ -20,6 +23,9 @@ const Form = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-top: 20px;
+  // @media only screen and (max-width: 768px) {
+  //   width: 100%;
+  // }
 `;
 
 const Label = styled.label`
@@ -33,6 +39,9 @@ const Input = styled.input`
   border: 1px solid #ccc;
   margin-bottom: 10px;
   width: 45%;
+  // @media only screen and (max-width: 768px) {
+  //   width: 100%;
+  // }
 `;
 
 const TextArea = styled.textarea`
@@ -75,12 +84,6 @@ const PageContainer = styled.div`
   justify-content: space-between;
 `;
 
-// const PageContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-// `;
-
 const ContactContainer = styled.div`
   flex: 1;
   color: #da4ea2;
@@ -117,23 +120,13 @@ const Name = styled.div`
   font-weight: bolder;
 `;
 
-// const SocialIcons = styled.div`;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin-top: 10px;
 
-//   & > * {
-//     margin: 0 10px;
-//     font-size: 24px;
-//     color: #da4ea2;
-//     cursor: pointer;
-//   }
-// `;
 
 function Contact() {
   const ref = useRef();
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -148,59 +141,56 @@ function Contact() {
         (result) => {
           console.log(result.text);
           setSuccess(true);
+          setError(false);
         },
         (error) => {
           console.log(error.text);
           setSuccess(false);
+          setError(true);
         }
       );
   };
+
   return (
-    <Section id = "Contact">
-    <PageContainer>
-      <ContactContainer>
-        <PageWrapper>
-          <Form ref={ref} onSubmit={handleSubmit}>
-            <h1>send a message :)</h1>
-            <Label htmlFor="name">name:</Label>
-            <Input type="text" id="name" name="name" />
-            <Label htmlFor="email">email:</Label>
-            <Input type="email" id="email" name="email" />
-            <Label htmlFor="message">message:</Label>
-            <TextArea id="message" name="message" />
-            <SubmitButton type="submit">submit</SubmitButton>
-            {success &&
-              "your message has been sent. we'll get back to u asap :)"}
-            <ContactLinks>
-              <ContactLink href="https://github.com/jayalohana">
-                <FaGithub size={32} />
-              </ContactLink>
-              <ContactLink href="https://www.linkedin.com/in/jaya-lohana-720551214/">
-                <FaLinkedin size={32} />
-              </ContactLink>
-              <ContactLink href="https://www.instagram.com/jayasdigitaldiaryy/">
-                <FaInstagram size={32} />
-              </ContactLink>
-            </ContactLinks>
-          </Form>
-          <Footer>
-            developed by -- <Name> jaya lohana </Name> --
-          </Footer>
-        </PageWrapper>
-      </ContactContainer>
-    </PageContainer>
+    <Section id="Contact">
+      <PageContainer>
+        <ContactContainer>
+          <PageWrapper>
+            <Form ref={ref} onSubmit={handleSubmit}>
+              <h1>send a message :)</h1>
+              <Label htmlFor="name">name:</Label>
+              <Input type="text" id="name" name="name" />
+              <Label htmlFor="email">email:</Label>
+              <Input type="email" id="email" name="email" />
+              <Label htmlFor="message">message:</Label>
+              <TextArea id="message" name="message" />
+              <SubmitButton type="submit">submit</SubmitButton>
+              {success && (
+                <p>
+                  your message has been sent. we'll get back to u asap :)
+                </p>
+              )}
+              {error && <p>Oops, something went wrong. Please try again.</p>}
+              <ContactLinks>
+                <ContactLink href="https://github.com/jayalohana">
+                  <FaGithub size={32} />
+                </ContactLink>
+                <ContactLink href="https://www.linkedin.com/in/jaya-lohana-720551214/">
+                  <FaLinkedin size={32} />
+                </ContactLink>
+                <ContactLink href="https://www.instagram.com/jayasdigitaldiaryy/">
+                  <FaInstagram size={32} />
+                </ContactLink>
+              </ContactLinks>
+            </Form>
+            <Footer>developed by -- <Name> jaya lohana </Name> --</Footer>
+          </PageWrapper>
+        </ContactContainer>
+      </PageContainer>
     </Section>
   );
 }
 
+
 export default Contact;
 
-// const ContactLinks = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   position: fixed;
-//   top: 50%;
-//   right: 0;
-//   transform: translateY(-50%);
-// `;

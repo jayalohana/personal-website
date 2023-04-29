@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import About from "./About";
 
 const Section = styled.div`
   height: 100vh;
@@ -95,6 +94,12 @@ const Right = styled.div`
   }
 `;
 
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
 const Img = styled.img`
   width: 900px;
   height: 700px;
@@ -121,7 +126,7 @@ const Img = styled.img`
 const Hero = () => {
 
   return (
-    <Section>
+    <Section id="Home">
       <Navbar />
       <Container>
         <Left>
@@ -134,10 +139,14 @@ const Hero = () => {
             second-year computer science student who loves experimenting with
             new frameworks and developing my skills.
           </Description>
-          <Button>About me</Button> 
+          <Icons>
+          <a href="jayalohana/portfolio-website/Jaya Lohana (1).pdf">
+            <Button>Resume</Button>
+          </a>
+        </Icons>
         </Left>
         <Right>
-          <Img src="./img/cutout.png" />
+          <Img src="./img/homecut.PNG" />
         </Right>
       </Container>
     </Section>

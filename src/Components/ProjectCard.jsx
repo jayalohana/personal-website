@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
 
 const Card = styled.div`
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 2% 10px 0;
@@ -21,6 +21,7 @@ const Card = styled.div`
   &:nth-child(3n) {
     margin-right: 0;
   }
+  
 `;
 
 const Image = styled.img`
