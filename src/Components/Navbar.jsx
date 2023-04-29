@@ -10,7 +10,7 @@ const Section = styled.div`
 
 const Container = styled.div`
   width: 1400px;
-  position: absolute;
+  // position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
