@@ -12,9 +12,11 @@ const PageWrapper = styled.div`
   margin-top: 70px;
   margin-bottom: 100px;
   scroll-snap-align: center;
-  // @media only screen and (max-width: 768px) {
-  //   padding: 10px;
-  // }
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 1000px;
+  }
 `;
 
 const ExperienceSection = styled.section`

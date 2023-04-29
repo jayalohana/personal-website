@@ -5,7 +5,10 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 
 
-const Section = styled.div``
+const Section = styled.div`@media only screen and (max-width: 768px) {
+  padding: 20px;
+  text-align: center;
+}`
 
 const PageWrapper = styled.div`
   display: flex;
@@ -13,9 +16,7 @@ const PageWrapper = styled.div`
   align-items: center;
   height: 100vh;
   scroll-snap-align: center;
-  // @media only screen and (max-width: 768px) {
-  //   flex-direction: column;
-  // }
+  
 `;
 
 const Form = styled.div`
@@ -75,6 +76,9 @@ const Footer = styled.footer`
   color: #fff;
   justify-content: flex-end;
   font-weight: bolder;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const PageContainer = styled.div`

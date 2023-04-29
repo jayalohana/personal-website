@@ -21,7 +21,11 @@ const Card = styled.div`
   &:nth-child(3n) {
     margin-right: 0;
   }
-  
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 600px;
+  }
 `;
 
 const Image = styled.img`

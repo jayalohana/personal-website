@@ -10,6 +10,10 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   scroll-snap-align: center;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -37,6 +41,11 @@ const SkillsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 200px;
+  }
 `;
 
 const SkillsTitle = styled.h2`

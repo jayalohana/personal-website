@@ -10,8 +10,9 @@ const Section = styled.div`
 
 const Container = styled.div`
   width: 1400px;
-  // position: absolute;
   display: flex;
+  position: static;
+  // position: absolute;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
@@ -19,6 +20,7 @@ const Container = styled.div`
     width: 100%;
     padding: 10px;
     position: fixed;
+    align-items: center;
   }
 `;
 
