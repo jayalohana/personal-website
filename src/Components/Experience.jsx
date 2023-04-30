@@ -45,7 +45,7 @@ const ExperienceTitle = styled.h2`
   // @media only screen and (max-width: 768px) {
   //   font-size: 32px;
   //   margin-bottom: 30px;
-    margin-top: 200px;
+    margin-top: 300px;
   // }
 `;
 
