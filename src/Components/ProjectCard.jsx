@@ -7,7 +7,7 @@ const Card = styled.div`
   padding: 10px;
   margin: 10px 2% 10px 0;
   width: 30%;
-  min-width:300px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -29,10 +29,11 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-align-items: center;
+  align-items: center;
   width: 175px;
   height: 175px;
   margin-bottom: 10px;
+  border-radius: 15px;
   transition: transform 0.2s ease-in-out;
 
   &:hover {
@@ -68,11 +69,11 @@ const ProjectCard = ({ project }) => {
       <Image src={project.image} alt={project.title} />
       <Title>{project.title}</Title>
       <Description>{project.description}</Description>
-      <Link href={project.url}><FaGithub color="#fff" size={30} /></Link>
+      <Link href={project.url}>
+        <FaGithub color="#fff" size={30} />
+      </Link>
     </Card>
   );
 };
 
 export default ProjectCard;
-
-

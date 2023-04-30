@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 
 
-const Section = styled.div`@media only screen and (max-width: 768px) {
+const Section = styled.div`
+height: 100vh;
+@media only screen and (max-width: 768px) {
   padding: 20px;
   text-align: center;
 }`
@@ -16,6 +18,7 @@ const PageWrapper = styled.div`
   align-items: center;
   height: 100vh;
   scroll-snap-align: center;
+  scroll-behavior: smooth;
   
 `;
 
@@ -69,9 +72,10 @@ const SubmitButton = styled.button`
 `;
 
 const Footer = styled.footer`
-  margin-top: 53%;
+  margin-top: 50%; 
   padding: 10px;
   display: flex;
+  scroll-snap-align: center;
   align-items: left;
   color: #fff;
   justify-content: flex-end;
@@ -155,6 +159,12 @@ function Contact() {
       );
   };
 
+
+  function handleEmailClick() {
+    const email = "jaya24@my.yorku.ca"; // Replace with your email address
+    window.location.href = `mailto:${email}`;
+  }
+
   return (
     <Section id="Contact">
       <PageContainer>
@@ -184,6 +194,9 @@ function Contact() {
                 </ContactLink>
                 <ContactLink href="https://www.instagram.com/jayasdigitaldiaryy/">
                   <FaInstagram size={32} />
+                </ContactLink>
+                <ContactLink onClick={handleEmailClick}>
+                  <FaEnvelope size={32}  />
                 </ContactLink>
               </ContactLinks>
             </Form>

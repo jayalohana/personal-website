@@ -11,7 +11,7 @@ const Section = styled.div`
 const Container = styled.div`
   width: 1400px;
   display: flex;
-  position: static;
+  position: fixed;
   // position: absolute;
   justify-content: space-between;
   align-items: center;

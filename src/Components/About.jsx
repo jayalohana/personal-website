@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Section = styled.div``;
+const Section = styled.div`
+height: 100vh`;
 
 const Container = styled.div`
   display: flex;
@@ -93,7 +94,7 @@ const About = () => {
             <li> Python</li>
             <li>REST APIs</li>
             <li>GraphQL</li>
-            <li>PyGame</li>
+            <li>MUI</li>
             <li>SQL</li>
           </ul>
         </SkillsList>
