@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 const Section = styled.div`
-height: 100vh;
+
 @media only screen and (max-width: 768px) {
   padding: 20px;
   text-align: center;

@@ -6,7 +6,7 @@ const Section = styled.div` @media only screen and (max-width: 768px) {
   padding: 20px;
   margin-top : 50px;
   text-align: center;
-  height: 100vh;
+  
 }`
 
 const Wrapper = styled.div`
