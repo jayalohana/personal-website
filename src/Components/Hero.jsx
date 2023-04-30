@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 
 const Section = styled.div`
-  
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
