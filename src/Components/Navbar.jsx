@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// 
+//
 
 const Section = styled.div`
   display: flex;
@@ -10,7 +10,8 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  z-index= -1;
+  width:fit-content;
   display: flex;
   position: fixed;
   // position: absolute;
@@ -60,7 +61,6 @@ const ListItem = styled.li`
   }
 `;
 
-
 const Navbar = () => {
   return (
     <Section>
@@ -68,11 +68,36 @@ const Navbar = () => {
         <Links>
           <Logo src="./img/logo-cutout.png" />
           <List>
-            <ListItem><a href="#Home"> <span>Home</span></a></ListItem>
-            <ListItem><a href="#About"> <span>About</span></a></ListItem>
-            <ListItem><a href="#Projects"> <span>Projects</span></a></ListItem>
-            <ListItem><a href="#Experience"> <span>Experience</span></a></ListItem>
-            <ListItem><a href="#Contact"> <span>Contact</span></a></ListItem>
+            <ListItem>
+              <a href="#Home">
+                {" "}
+                <span>Home</span>
+              </a>
+            </ListItem>
+            <ListItem>
+              <a href="#About">
+                {" "}
+                <span>About</span>
+              </a>
+            </ListItem>
+            <ListItem>
+              <a href="#Projects">
+                {" "}
+                <span>Projects</span>
+              </a>
+            </ListItem>
+            <ListItem>
+              <a href="#Experience">
+                {" "}
+                <span>Experience</span>
+              </a>
+            </ListItem>
+            <ListItem>
+              <a href="#Contact">
+                {" "}
+                <span>Contact</span>
+              </a>
+            </ListItem>
           </List>
         </Links>
       </Container>

@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   margin-top: 70px;
-  margin-bottom: 100px;
+  margin-bottom: 300px;
   scroll-snap-align: center;
   @media only screen and (max-width: 768px) {
     padding: 20px;

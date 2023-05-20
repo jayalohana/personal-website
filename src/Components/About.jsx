@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: fit-content1;
   scroll-snap-align: center;
   @media only screen and (max-width: 768px) {
     padding: 20px;
@@ -27,7 +27,7 @@ const Title = styled.h1`
 const Introduction = styled.p`
   font-size: 1.8rem;
   text-align: center;
-  margin: 30px 0 0 50px;
+  margin: 0 0 0 50px;
   margin-bottom: 2rem;
   margin-left: 20px;
   line-height: 1.5;

@@ -9,14 +9,13 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
-    height: 200vh;
+    height: fit-content;
   }
 `;
 
 const Container = styled.div`
-  height: 100%;
+  height:fit-content;
   scroll-snap-align: center;
-  width: 1400px;
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
@@ -99,6 +98,13 @@ const Icons = styled.div`
   gap: 20px;
 `;
 
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Maintain aspect ratio (height:width = 9:16) */
+`;
+
+
 const Img = styled.img`
   width: 900px;
   height: 700px;
@@ -139,13 +145,15 @@ const Hero = () => {
             new frameworks and developing my skills.
           </Description>
           <Icons>
-          <a href="jayalohana/portfolio-website/Jaya Lohana (1).pdf">
+          <a href="/Users/jayalohana/portfolio-website/Jaya Lohana .pdf"> 
             <Button>Resume</Button>
           </a>
         </Icons>
         </Left>
         <Right>
-          <Img src="./img/homecut.PNG" />
+        <ImageContainer>
+            <Img src="./img/homecut.PNG" />
+          </ImageContainer>
         </Right>
       </Container>
     </Section>
