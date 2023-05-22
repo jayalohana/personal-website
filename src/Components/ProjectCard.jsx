@@ -22,9 +22,9 @@ const Card = styled.div`
     margin-right: 0;
   }
   @media only screen and (max-width: 768px) {
-    padding: 20px;
+    // padding: 20px;
     text-align: center;
-    margin-bottom: 600px;
+    // margin-bottom: 600px;
     scroll-snap-align: center;
   }
 `;

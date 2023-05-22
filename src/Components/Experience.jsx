@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Section = styled.div`
   scroll-snap-align: center;
+  
 `;
 
 const PageWrapper = styled.div`
@@ -18,7 +19,7 @@ const PageWrapper = styled.div`
     padding: 20px;
     text-align: center;
     // margin-bottom: 1500px;
-    margin-top: 1500px;
+    margin-top: 1700px;
     margin-bottom: 2000px;
   }
 `;

@@ -75,7 +75,7 @@ const Footer = styled.footer`
   margin-top: 50%; 
   padding: 10px;
   display: flex;
-  scroll-snap-align: center;
+  scroll-behavior:smooth;
   align-items: left;
   color: #fff;
   justify-content: flex-end;
