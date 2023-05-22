@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
+
+margin-top: 30rem;
 `;
 
 const Container = styled.div`
@@ -9,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: fit-content1;
+  height: fit-content;
   scroll-snap-align: center;
   @media only screen and (max-width: 768px) {
     padding: 20px;

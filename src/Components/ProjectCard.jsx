@@ -8,6 +8,7 @@ const Card = styled.div`
   width: 30%;
   min-width: 300px;
   display: flex;
+  scroll-snap-align: center;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
@@ -24,12 +25,14 @@ const Card = styled.div`
     padding: 20px;
     text-align: center;
     margin-bottom: 600px;
+    scroll-snap-align: center;
   }
 `;
 
 const Image = styled.img`
   align-items: center;
   width: 175px;
+  scroll-snap-align: center;
   height: 175px;
   margin-bottom: 10px;
   border-radius: 15px;

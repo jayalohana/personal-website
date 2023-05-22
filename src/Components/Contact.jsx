@@ -189,7 +189,7 @@ function Contact() {
                 <ContactLink href="https://github.com/jayalohana">
                   <FaGithub size={32} />
                 </ContactLink>
-                <ContactLink href="https://www.linkedin.com/in/jaya-lohana-720551214/">
+                <ContactLink href="https://www.linkedin.com/in/jaya-lohana/">
                   <FaLinkedin size={32} />
                 </ContactLink>
                 <ContactLink href="https://www.instagram.com/jayasdigitaldiaryy/">

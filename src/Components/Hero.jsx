@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 
 const Section = styled.div`
+
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -27,6 +28,7 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
+
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -84,6 +86,7 @@ const Button = styled.button`
 `;
 
 const Right = styled.div`
+
   flex: 3;
   position: relative;
   @media only screen and (max-width: 768px) {
@@ -145,7 +148,7 @@ const Hero = () => {
             new frameworks and developing my skills.
           </Description>
           <Icons>
-          <a href="/Users/jayalohana/portfolio-website/Jaya Lohana .pdf"> 
+          <a href="assets/Jaya Lohana.pdf"> 
             <Button>Resume</Button>
           </a>
         </Icons>

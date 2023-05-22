@@ -10,14 +10,14 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  z-index= -1;
-  width:fit-content;
+  z-index: 1;
   display: flex;
+  backdrop-filter: blur(100px);
+  width: 100%;
   position: fixed;
   // position: absolute;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0px;
+  justify-content: center;
+  // padding-left: 140rem;
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 10px;
@@ -36,8 +36,8 @@ const Links = styled.div`
 const Logo = styled.img`
   margin-top: 30px;
   height: 125px;
-  margin-right: 350px;
   flex-grow: 1;
+  padding-right: 350px;
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -45,19 +45,24 @@ const Logo = styled.img`
 
 const List = styled.ul`
   display: flex;
-  text-decoration: none;
+
   gap: 20px;
   list-style: none;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
 `;
 
 const ListItem = styled.li`
   cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.2) translateY(-2px); /* Added translateY for a slight vertical movement */
+  }
   span {
     text-decoration: none;
     color: #fff;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 `;
 

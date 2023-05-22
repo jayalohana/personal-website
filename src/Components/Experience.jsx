@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
+  scroll-snap-align: center;
 `;
 
 const PageWrapper = styled.div`
@@ -11,12 +12,13 @@ const PageWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   margin-top: 70px;
-  margin-bottom: 300px;
+
+  margin-top: 15rem;
   scroll-snap-align: center;
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
-    margin-bottom: 1000px;
+    margin-bottom: 1500px;
   }
 `;
 
@@ -37,6 +39,7 @@ const ExperienceSection = styled.section`
 
 const ExperienceTitle = styled.h2`
   margin-top: 200px;
+
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 50px;
@@ -45,13 +48,14 @@ const ExperienceTitle = styled.h2`
   // @media only screen and (max-width: 768px) {
   //   font-size: 32px;
   //   margin-bottom: 30px;
-    margin-top: 300px;
+  margin-top: 300px;
   // }
 `;
 
 const ExperienceList = styled.ul`
   list-style: none;
   margin: 0;
+  scroll-snap-align: center;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +110,7 @@ const ExperienceRole = styled.p`
 
 const ExperienceDate = styled.p`
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 900;
   margin-bottom: 5px;
   color: #fff;
   text-align: center;
@@ -128,63 +132,101 @@ function Experience() {
           <ExperienceTitle>work experience</ExperienceTitle>
           <ExperienceList>
             <ExperienceItem>
-              <ExperienceLogo
-                src="./img/bbi-logo.png"
-                alt="Company A logo"
-              />
+              <ExperienceLogo src="./img/Gaotek.jpeg" alt="GaoTek" />
+              <ExperienceInfo>
+                <ExperienceCompany>
+                  {""}
+                  GaoTek Inc. {""}
+                </ExperienceCompany>
+                <ExperienceRole> Software Development Intern </ExperienceRole>
+                <ExperienceDate> May 2023 - Present</ExperienceDate>
+                <ExperienceDescription>
+                  <li>
+                    Collaborated with the team to design and develop software
+                    features, ensuring adherence to coding standards.
+                  </li>
+                  <li>Assisted in optimizing database queries and implementing efficient business logic to enhance system efficiency and reduce response time.</li>
+                  <li>
+                    Assisted in implementing and maintaining backend systems,
+                    utilizing technologies such as Spring Boot and RESTful APIs.
+                  </li>
+                </ExperienceDescription>
+              </ExperienceInfo>
+            </ExperienceItem>
+            <ExperienceItem>
+              <ExperienceLogo src="./img/ssy-logo.jpg" alt="Company B logo" />
+              <ExperienceInfo>
+                <ExperienceCompany> yuHacks 2023 </ExperienceCompany>
+                <ExperienceRole> Frontend Developer </ExperienceRole>
+                <ExperienceDate> May 2023 – Present</ExperienceDate>
+                <ExperienceDescription>
+                  <li>
+                    Utilizing React.js and Redux to build scalable and modular
+                    components for the merch store website, enabling efficient
+                    state management and seamless integration with the backend
+                    APIs.
+                  </li>
+                  <li>
+                  Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the merch store website, enhancing user engagement and providing real-time data updates.
+                  </li>
+                </ExperienceDescription>
+              </ExperienceInfo>
+            </ExperienceItem>
+            <ExperienceItem>
+              <ExperienceLogo src="./img/bbi-logo.png" alt="Company A logo" />
               <ExperienceInfo>
                 <ExperienceCompany>Bold Brew Insights</ExperienceCompany>
                 <ExperienceRole>UI/UX Designer</ExperienceRole>
                 <ExperienceDate>March 2022 – July 2022</ExperienceDate>
                 <ExperienceDescription>
-                  Researched financial technology concepts to synthesize key
-                  findings surrounding the financial market of NFTs, blockchain
-                  technology, and national cryptocurrencies for web-content
-                  creation by using my written communication and presentation
-                  skillset.
+                  <li>
+                    Researched financial technology concepts to synthesize key
+                    findings surrounding the financial market of NFTs,
+                    blockchain technology, and national cryptocurrencies for
+                    web-content creation by using my written communication and
+                    presentation skillset.{" "}
+                  </li>
                 </ExperienceDescription>
               </ExperienceInfo>
             </ExperienceItem>
             <ExperienceItem>
-              <ExperienceLogo
-                src="./img/yu-logo.png"
-                alt="Company B logo"
-              />
+              <ExperienceLogo src="./img/yu-logo.png" alt="Company B logo" />
               <ExperienceInfo>
                 <ExperienceCompany>York International</ExperienceCompany>
                 <ExperienceRole>Community Engagement</ExperienceRole>
                 <ExperienceDate>July 2022 – Present</ExperienceDate>
                 <ExperienceDescription>
-                  Facilitated regular community engagement and global outreach
-                  discussions, while providing peer-to-peer support and
-                  mentorship to four students over four months, resulting in
-                  significant personal and academic growth.
+                  <li>
+                    Facilitated regular community engagement and global outreach
+                    discussions, while providing peer-to-peer support and
+                    mentorship to four students over four months, resulting in
+                    significant personal and academic growth.
+                  </li>
                 </ExperienceDescription>
               </ExperienceInfo>
             </ExperienceItem>
             <ExperienceItem>
-              <ExperienceLogo
-                src="./img/mgh-logo.jpg"
-                alt="Company B logo"
-              />
+              <ExperienceLogo src="./img/mgh-logo.jpg" alt="Company B logo" />
               <ExperienceInfo>
                 <ExperienceCompany>Many Green Hands</ExperienceCompany>
                 <ExperienceRole>Vice President (Advocacy)</ExperienceRole>
                 <ExperienceDate>August 2022 – Present</ExperienceDate>
                 <ExperienceDescription>
-                  Participating in discussions and events related to online
-                  advocacy, such as webinars, forums, and social media
-                  campaigns. Creating and managing online content that promotes
-                  the club's mission and activities, including blog posts,
-                  social media updates, and event listings
+                  <li>
+                    Participating in discussions and events related to online
+                    advocacy, such as webinars, forums, and social media
+                    campaigns.{" "}
+                  </li>
+                  <li>
+                    Creating and managing online content that promotes the
+                    club's mission and activities, including blog posts, social
+                    media updates, and event listings.{" "}
+                  </li>
                 </ExperienceDescription>
               </ExperienceInfo>
             </ExperienceItem>
             <ExperienceItem>
-              <ExperienceLogo
-                src="./img/ssy-logo.jpg"
-                alt="Company B logo"
-              />
+              <ExperienceLogo src="./img/ssy-logo.jpg" alt="Company B logo" />
               <ExperienceInfo>
                 <ExperienceCompany>
                   {" "}
@@ -193,12 +235,16 @@ function Experience() {
                 <ExperienceRole> Marketing Executive </ExperienceRole>
                 <ExperienceDate> September 2022 – Present</ExperienceDate>
                 <ExperienceDescription>
-                  Developed and maintained the club's website to ensure it was
-                  up-to-date, visually appealing, and easy to navigate,
-                  resulting in a positive user experience for visitors. Created
-                  and managed online content to promote the club's mission and
-                  activities, which increased website traffic and engagement
-                  among target audiences.
+                  <li>
+                    Developed and maintained the club's website to ensure it was
+                    up-to-date, visually appealing, and easy to navigate,
+                    resulting in a positive user experience for visitors.{" "}
+                  </li>
+                  <li>
+                    Created and managed online content to promote the club's
+                    mission and activities, which increased website traffic and
+                    engagement among target audiences.{" "}
+                  </li>
                 </ExperienceDescription>
               </ExperienceInfo>
             </ExperienceItem>
