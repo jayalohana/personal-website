@@ -4,6 +4,7 @@ import Projects from "./Components/Projects";
 import styled from "styled-components";
 import Contact from "./Components/Contact";
 import Experience from "./Components/Experience";
+import Test from "./Components/Test";
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
+      {/* <Test /> */}
     </Container>
   );
 }

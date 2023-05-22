@@ -1,26 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-//
-
 const Section = styled.div`
   display: flex;
   justify-content: center;
-  height: 30vh;
+ 
 `;
 
 const Container = styled.div`
   z-index: 1;
   display: flex;
   backdrop-filter: blur(100px);
-  width: 100%;
+  // width: 100%;
   position: fixed;
+  padding-top: 20px;
+  height: 2rem;
   // position: absolute;
-  justify-content: center;
+  // justify-content: center;
   // padding-left: 140rem;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    padding: 10px;
     position: fixed;
     align-items: center;
   }
@@ -29,12 +28,11 @@ const Container = styled.div`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 50px;
-  margin-top: 30px;
+
 `;
 
 const Logo = styled.img`
-  margin-top: 30px;
+  // margin-top: 30px;
   height: 125px;
   flex-grow: 1;
   padding-right: 350px;
@@ -56,7 +54,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
-  
+
   &:hover {
     transform: scale(1.2) translateY(-2px); /* Added translateY for a slight vertical movement */
   }
