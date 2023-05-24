@@ -4,13 +4,12 @@ import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 
-
 const Section = styled.div`
-
-@media only screen and (max-width: 768px) {
-  padding: 20px;
-  text-align: center;
-}`
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  }
+`;
 
 const PageWrapper = styled.div`
   display: flex;
@@ -19,7 +18,6 @@ const PageWrapper = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   scroll-behavior: smooth;
-  
 `;
 
 const Form = styled.div`
@@ -72,10 +70,10 @@ const SubmitButton = styled.button`
 `;
 
 const Footer = styled.footer`
-  margin-top: 50%; 
+  margin-top: 50%;
   padding: 10px;
   display: flex;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
   align-items: left;
   color: #fff;
   justify-content: flex-end;
@@ -128,8 +126,6 @@ const Name = styled.div`
   font-weight: bolder;
 `;
 
-
-
 function Contact() {
   const ref = useRef();
   const [success, setSuccess] = useState(false);
@@ -159,7 +155,6 @@ function Contact() {
       );
   };
 
-
   function handleEmailClick() {
     const email = "jaya24@my.yorku.ca"; // Replace with your email address
     window.location.href = `mailto:${email}`;
@@ -180,9 +175,7 @@ function Contact() {
               <TextArea id="message" name="message" />
               <SubmitButton type="submit">submit</SubmitButton>
               {success && (
-                <p>
-                  your message has been sent. we'll get back to u asap :)
-                </p>
+                <p>your message has been sent. we'll get back to u asap :)</p>
               )}
               {error && <p>Oops, something went wrong. Please try again.</p>}
               <ContactLinks>
@@ -196,11 +189,13 @@ function Contact() {
                   <FaInstagram size={32} />
                 </ContactLink>
                 <ContactLink onClick={handleEmailClick}>
-                  <FaEnvelope size={32}  />
+                  <FaEnvelope size={32} />
                 </ContactLink>
               </ContactLinks>
             </Form>
-            <Footer>developed by -- <Name> jaya lohana </Name> --</Footer>
+            <Footer>
+              developed by -- <Name> jaya lohana </Name> --
+            </Footer>
           </PageWrapper>
         </ContactContainer>
       </PageContainer>
@@ -208,6 +203,4 @@ function Contact() {
   );
 }
 
-
 export default Contact;
-

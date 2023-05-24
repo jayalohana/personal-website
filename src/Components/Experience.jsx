@@ -35,9 +35,9 @@ const ExperienceSection = styled.section`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 800px;
-  // @media only screen and (max-width: 768px) {
-  //   padding: 20px;
-  // }
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const ExperienceTitle = styled.h2`

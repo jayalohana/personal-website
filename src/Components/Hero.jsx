@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 
 const Section = styled.div`
-
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -11,10 +10,12 @@ const Section = styled.div`
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     height: fit-content;
+   
   }
 `;
 
 const Container = styled.div`
+margin-top: 400px;
   height:fit-content;
   scroll-snap-align: center;
   display: flex;
