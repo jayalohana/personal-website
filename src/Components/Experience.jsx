@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Section = styled.div`
-  scroll-snap-align: center;
+ 
   
 `;
 
@@ -14,7 +14,7 @@ const PageWrapper = styled.div`
   height: 100vh;
   margin-top: 400px;
   margin-bottom: 450px;
-  scroll-snap-align: center;
+
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
@@ -29,7 +29,7 @@ const ExperienceSection = styled.section`
   flex-direction: column;
   align-items: center;
   margin: 50px 0;
-  scroll-snap-align: center;
+ 
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -57,7 +57,7 @@ const ExperienceTitle = styled.h2`
 const ExperienceList = styled.ul`
   list-style: none;
   margin: 0;
-  scroll-snap-align: center;
+  
   padding: 0;
   display: flex;
   flex-wrap: wrap;

@@ -12,7 +12,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: fit-content;
-  scroll-snap-align: center;
+
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;

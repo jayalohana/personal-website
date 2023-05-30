@@ -1,23 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import NavMobile from "./NavMobile";
+import Jaya_Lohana_Website from '../assets/Jaya_Lohana_Website.pdf'
 
 const Section = styled.div`
-  scroll-snap-align: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
     height: fit-content;
-   
   }
 `;
 
 const Container = styled.div`
 margin-top: 400px;
   height:fit-content;
-  scroll-snap-align: center;
+
   display: flex;
   justify-content: space-between;
   @media only screen and (max-width: 768px) {
@@ -71,11 +72,12 @@ const Description = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
   width: 100px;
+  text-decoration: none;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -97,6 +99,7 @@ const Right = styled.div`
 `;
 
 const Icons = styled.div`
+
   display: flex;
   align-items: center;
   gap: 20px;
@@ -136,7 +139,8 @@ const Hero = () => {
 
   return (
     <Section id="Home">
-      <Navbar />
+      {/* <Navbar />
+      <NavMobile /> */}
       <Container>
         <Left>
           <Title>jaya lohana</Title>
@@ -149,9 +153,7 @@ const Hero = () => {
             new frameworks and developing my skills.
           </Description>
           <Icons>
-          <a href="assets/Jaya Lohana.pdf"> 
-            <Button>Resume</Button>
-          </a>
+          <Button href={Jaya_Lohana_Website}>Resume</Button>
         </Icons>
         </Left>
         <Right>

@@ -5,17 +5,14 @@ import styled from "styled-components";
 import Contact from "./Components/Contact";
 import Experience from "./Components/Experience";
 import Test from "./Components/Test";
+import Navbar from "./Components/Navbar";
+import NavMobile from "./Components/NavMobile";
 
 
 
 const Container = styled.div`
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  scroll-snap-align: center;
   background: url("./img/bg.jpeg");
   &::-webkit-scrollbar {
     display: none;
@@ -25,6 +22,8 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
+      <Navbar />
+      {/* <NavMobile /> */}
       <Hero />
       <About />
       <Projects />

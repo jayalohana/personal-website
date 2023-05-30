@@ -8,11 +8,11 @@ const Card = styled.div`
   width: 30%;
   min-width: 300px;
   display: flex;
-  scroll-snap-align: center;
+  
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  scroll-snap-align: center;
+
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -25,14 +25,14 @@ const Card = styled.div`
     // padding: 20px;
     text-align: center;
     // margin-bottom: 600px;
-    scroll-snap-align: center;
+ 
   }
 `;
 
 const Image = styled.img`
   align-items: center;
   width: 175px;
-  scroll-snap-align: center;
+
   height: 175px;
   margin-bottom: 10px;
   border-radius: 15px;
@@ -57,6 +57,11 @@ const Link = styled.a`
   color: #fff
   font-size: 25px;
   margin-top: 10px;
+
+  &:hover {
+    color: #c73985; 
+  }
+
 `;
 
 const ProjectsContainer = styled.div`

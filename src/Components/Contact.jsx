@@ -16,8 +16,6 @@ const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  scroll-snap-align: center;
-  scroll-behavior: smooth;
 `;
 
 const Form = styled.div`
@@ -73,7 +71,6 @@ const Footer = styled.footer`
   margin-top: 50%;
   padding: 10px;
   display: flex;
-  scroll-behavior: smooth;
   align-items: left;
   color: #fff;
   justify-content: flex-end;
