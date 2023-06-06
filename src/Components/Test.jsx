@@ -19,11 +19,22 @@ const CardDeck = styled.div`
 `;
 
 const Card = styled.div`
-  margin: 10px;
-  width: 500px;
-  height: 800px;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  width: 400px;
+  height: 400px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
 `;
+
 
 const CardBody = styled.div`
 display: flex;
@@ -36,12 +47,28 @@ overflow-y: auto;
 `;
 
 const CardContent = styled.div`
-max-height: 200px;
-overflow-y:auto;
-padding: 10px;
-::-webkit-scrollbar{
-  display:none;
-}
+  max-height: 200px;
+  overflow: hidden;
+`;
+
+const CardText = styled.p`
+  display: ${(props) => (props.expanded ? "block" : "none")};
+  color: #000;
+  overflow-y: auto;
+  padding-right: 15px;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 const CardButtonContainer = styled.div`
@@ -64,8 +91,8 @@ const CardButton = styled.button`
 `;
 
 const CardImage = styled.img`
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 150px;
   object-fit: cover;
 `;
 
@@ -82,10 +109,10 @@ const CardTitle = styled.h5`
   color: #000;
 `;
 
-const CardText = styled.p`
-  display: ${(props) => (props.expanded ? "block" : "none")};
-  color: #000;
-`;
+// const CardText = styled.p`
+//   display: ${(props) => (props.expanded ? "block" : "none")};
+//   color: #000;
+// `;
 
 function Test() {
   const [expandedCards, setExpandedCards] = useState([]);

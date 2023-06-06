@@ -153,7 +153,7 @@ const Hero = () => {
             new frameworks and developing my skills.
           </Description>
           <Icons>
-          <Button href={Jaya_Lohana_Website}>Resume</Button>
+          {/* <Button href={Jaya_Lohana_Website}>Resume</Button> */}
         </Icons>
         </Left>
         <Right>

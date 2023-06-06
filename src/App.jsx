@@ -29,7 +29,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
-      {/* <Test /> */}
+      <Test />
     </Container>
   );
 }

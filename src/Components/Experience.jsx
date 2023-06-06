@@ -154,7 +154,7 @@ function Experience() {
                   </li>
                 </ExperienceDescription>
               </ExperienceInfo>
-            </ExperienceItem>
+            {/* </ExperienceItem>
             <ExperienceItem>
               <ExperienceLogo src="./img/ssy-logo.jpg" alt="Company B logo" />
               <ExperienceInfo>
@@ -173,7 +173,7 @@ function Experience() {
                   </li>
                 </ExperienceDescription>
               </ExperienceInfo>
-            </ExperienceItem>
+            </ExperienceItem> */}
             <ExperienceItem>
               <ExperienceLogo src="./img/bbi-logo.png" alt="Company A logo" />
               <ExperienceInfo>
