@@ -154,8 +154,8 @@ function Experience() {
                   </li>
                 </ExperienceDescription>
               </ExperienceInfo>
-            {/* </ExperienceItem>
-            <ExperienceItem>
+            </ExperienceItem>
+            {/* <ExperienceItem>
               <ExperienceLogo src="./img/ssy-logo.jpg" alt="Company B logo" />
               <ExperienceInfo>
                 <ExperienceCompany> yuHacks 2023 </ExperienceCompany>
