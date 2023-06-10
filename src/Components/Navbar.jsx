@@ -18,16 +18,20 @@ const Container = styled.div`
   // justify-content: center;
   // padding-left: 140rem;
   @media only screen and (max-width: 768px) {
-    width: 100%;
+    width: 50rem;
+
     position: fixed;
     align-items: center;
+
+    padding-right: 20px;
+    padding-left: 20px;
   }
 `;
 
 const Links = styled.div`
   display: flex;
   align-items: center;
-
+  padding-left: 12px;
 `;
 
 const Logo = styled.img`
@@ -60,6 +64,12 @@ const ListItem = styled.li`
   span {
     text-decoration: none;
     color: #fff;
+  }
+  @media only screen and (max-width: 768px) {
+    a {
+      font-size: 14px;
+      justify-content: center;
+    }
   }
 `;
 

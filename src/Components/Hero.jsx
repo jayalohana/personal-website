@@ -2,50 +2,52 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import NavMobile from "./NavMobile";
-import Jaya_Lohana_Website from '../assets/Jaya_Lohana_Website.pdf'
+import Jaya_Lohana_Website from "../assets/Jaya_Lohana_Website.pdf";
 
 const Section = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   @media only screen and (max-width: 768px) {
     height: fit-content;
   }
 `;
 
 const Container = styled.div`
-margin-top: 400px;
-  height:fit-content;
-
+  margin-top: 400px;
+  height: fit-content;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   @media only screen and (max-width: 768px) {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-top: 200px;
   }
 `;
 
 const Left = styled.div`
-
   flex: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 20px;
+
   @media only screen and (max-width: 768px) {
+    border: 1px solid white;
     flex: 1;
-    align-items: center;
   }
 `;
 
 const Title = styled.h1`
   font-size: 74px;
+  text-align: center;
+
   @media only screen and (max-width: 768px) {
-    text-align: center;
+    font-size: 48px;
   }
 `;
 
@@ -66,9 +68,10 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   font-size: 24px;
   color: lightgray;
+  text-align: center;
+
   @media only screen and (max-width: 768px) {
-    padding: 20px;
-    text-align: center;
+    font-size: 18px;
   }
 `;
 
@@ -82,6 +85,7 @@ const Button = styled.a`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
   &:hover {
     color: #c73985;
     background-color: #fff;
@@ -89,9 +93,9 @@ const Button = styled.a`
 `;
 
 const Right = styled.div`
-
   flex: 3;
   position: relative;
+
   @media only screen and (max-width: 768px) {
     flex: 1;
     width: 100%;
@@ -99,9 +103,9 @@ const Right = styled.div`
 `;
 
 const Icons = styled.div`
-
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 `;
 
@@ -110,7 +114,6 @@ const ImageContainer = styled.div`
   width: 100%;
   padding-top: 56.25%; /* Maintain aspect ratio (height:width = 9:16) */
 `;
-
 
 const Img = styled.img`
   width: 900px;
@@ -123,20 +126,20 @@ const Img = styled.img`
   right: 0;
   margin: auto;
   animation: animate 2s infinite ease alternate;
+
   @media only screen and (max-width: 768px) {
     width: 300px;
     height: 300px;
   }
+
   @keyframes animate {
     to {
       transform: translateY(25px);
-      // transform: translateX(20px);
     }
   }
 `;
 
 const Hero = () => {
-
   return (
     <Section id="Home">
       {/* <Navbar />
@@ -153,11 +156,11 @@ const Hero = () => {
             new frameworks and developing my skills.
           </Description>
           <Icons>
-          {/* <Button href={Jaya_Lohana_Website}>Resume</Button> */}
-        </Icons>
+            <Button href={Jaya_Lohana_Website}>Resume</Button>
+          </Icons>
         </Left>
         <Right>
-        <ImageContainer>
+          <ImageContainer>
             <Img src="./img/homecut.PNG" />
           </ImageContainer>
         </Right>
@@ -167,33 +170,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-  /* <Canvas camera={{fov:25, position: [5, 5, 5] }}>
-            <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
-                <MeshDistortMaterial
-                  color="#3d1c56"
-                  attach="material"
-                  distort={0.5}
-                  speed={2}
-                />
-              </Sphere>
-            </Suspense>
-          </Canvas> */
-}
-{
-  /* - welcome to my little corner of the internet! As a second-year
-            computer science student, I'm on a mission to conquer new frameworks
-            and make some cute code creations along the way. 
-            -greetings, fellow
-            techies! I'm a second-year computer science student with a passion
-            for all things coding. Follow along as I learn new frameworks and
-            create some cute and quirky projects.  */
-}
-
-// import { Canvas } from "@react-three/fiber";
-// import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";

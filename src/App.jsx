@@ -7,6 +7,7 @@ import Experience from "./Components/Experience";
 import Test from "./Components/Test";
 import Navbar from "./Components/Navbar";
 import NavMobile from "./Components/NavMobile";
+import Test2 from "./Components/Experience";
 
 
 
@@ -29,7 +30,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
-      {/* <Test /> */}
+      {/* <Test2 /> */}
     </Container>
   );
 }
