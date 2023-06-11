@@ -1,47 +1,36 @@
+import React from "react";
 import { projectsData } from "./projectsData";
 import ProjectCard from "./ProjectCard";
 import styled from "styled-components";
 
-const Section = styled.div`
+const Section = styled.div``;
 
-margin-top: 15rem;
-
-@media only screen and (max-width: 768px) {
-  padding: 20px;
-  margin-top : 50px;
-  text-align: center;
-
-  
-}`
+const Container = styled.div`
+  margin-top: 5rem;
+`;
 
 const Wrapper = styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-
-align-items: stretch;
-@media only screen and (max-width: 768px) {
-  padding: 20px;
-  text-align: center;
-
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
 `;
 
 const Header = styled.h1`
-text-align: center;`
-;
+  text-align: center;
+`;
 
 const Projects = () => {
   return (
-    <Section id = "Projects">
-    <div>
-      <Header><h1>projects</h1></Header>
-      <Wrapper>
-        {projectsData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </Wrapper>
-    </div>
+    <Section id="Projects">
+      <Container className="container">
+        <Header>projects</Header>
+        <Wrapper>
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </Wrapper>
+      </Container>
     </Section>
   );
 };

@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
@@ -5,56 +6,38 @@ import NavMobile from "./NavMobile";
 import Jaya_Lohana_Website from "../assets/Jaya_Lohana_Website.pdf";
 
 const Section = styled.div`
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  @media only screen and (max-width: 768px) {
-    height: fit-content;
-  }
 `;
 
 const Container = styled.div`
-  margin-top: 400px;
-  height: fit-content;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  @media only screen and (max-width: 768px) {
-    margin-top: 200px;
+  @media screen and (max-width: 600px) {
+    margin-top: 0;
   }
 `;
 
 const Left = styled.div`
-  flex: 2;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 20px;
-
-  @media only screen and (max-width: 768px) {
-    border: 1px solid white;
-    flex: 1;
-  }
 `;
 
 const Title = styled.h1`
-  font-size: 74px;
-  text-align: center;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 48px;
-  }
+  text-align: left;
 `;
 
 const Intro = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-top: 2rem;
 `;
 
 const Line = styled.img`
@@ -68,10 +51,23 @@ const Subtitle = styled.h2`
 const Description = styled.p`
   font-size: 24px;
   color: lightgray;
-  text-align: center;
+  text-align: left;
+`;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 18px;
+const ButttonContainer = styled.div`
+  display: flex;
+  margin-top: 4.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    color: #c73985;
+    background-color: #fff;
+  }
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -79,59 +75,26 @@ const Button = styled.a`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
-  width: 100px;
-  text-decoration: none;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    color: #c73985;
-    background-color: #fff;
-  }
 `;
 
 const Right = styled.div`
-  flex: 3;
   position: relative;
-
-  @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 100%;
-  }
-`;
-
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* Maintain aspect ratio (height:width = 9:16) */
+  padding-top: 25rem;
 `;
 
 const Img = styled.img`
-  width: 900px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto;
   animation: animate 2s infinite ease alternate;
-
-  @media only screen and (max-width: 768px) {
-    width: 300px;
-    height: 300px;
-  }
-
   @keyframes animate {
     to {
       transform: translateY(25px);
@@ -142,28 +105,38 @@ const Img = styled.img`
 const Hero = () => {
   return (
     <Section id="Home">
-      {/* <Navbar />
-      <NavMobile /> */}
-      <Container>
-        <Left>
-          <Title>jaya lohana</Title>
-          <Intro>
-            <Line src="./img/line.png" />
-            <Subtitle>who am I?</Subtitle>
-          </Intro>
-          <Description>
-            second-year computer science student who loves experimenting with
-            new frameworks and developing my skills.
-          </Description>
-          <Icons>
-            <Button href={Jaya_Lohana_Website}>Resume</Button>
-          </Icons>
-        </Left>
-        <Right>
-          <ImageContainer>
-            <Img src="./img/homecut.PNG" />
-          </ImageContainer>
-        </Right>
+      <Container className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <Left>
+              <Title>jaya lohana</Title>
+              <Intro>
+                <Line src="./img/line.png" alt="line" />
+                <Subtitle>who am I?</Subtitle>
+              </Intro>
+              <Description>
+                second-year computer science student who loves experimenting
+                with new frameworks and developing my skills.
+              </Description>
+              <ButttonContainer>
+                <Button
+                  className="btn btn-primary btn-lg"
+                  role="button"
+                  href={Jaya_Lohana_Website}
+                >
+                  Resume
+                </Button>
+              </ButttonContainer>
+            </Left>
+          </div>
+          <div className="col-md-6">
+            <Right>
+              <ImageContainer>
+                <Img src="./img/homecut.PNG" alt="homecut" />
+              </ImageContainer>
+            </Right>
+          </div>
+        </div>
       </Container>
     </Section>
   );

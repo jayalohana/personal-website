@@ -8,7 +8,6 @@ import { BiMessageAltDetail } from "react-icons/bi";
 
 const Navbar = styled.nav`
   display: none;
-
   @media only screen and (max-width: 767px) {
     background: rgba(0, 0, 0, 0.7);
     width: max-content;
@@ -57,28 +56,28 @@ const NavMobile = () => {
         <RiHomeLine />
       </NavItem>
       <NavItem
-        href="#about"
+        href="#About"
         onClick={() => setActiveNavbar("#about")}
         className={activeNavbar === "#about" ? "active" : ""}
       >
         <AiOutlineUser />
       </NavItem>
       <NavItem
-        href="#experience"
-        onClick={() => setActiveNavbar("#experience")}
+        href="#Experience"
+        onClick={() => setActiveNavbar("#Experience")}
         className={activeNavbar === "#experience" ? "active" : ""}
       >
         <MdWorkOutline />
       </NavItem>
       <NavItem
-        href="#projects"
+        href="#Projects"
         onClick={() => setActiveNavbar("#portfolio")}
         className={activeNavbar === "#portfolio" ? "active" : ""}
       >
         <IoIosGitNetwork />
       </NavItem>
       <NavItem
-        href="#contact"
+        href="#Contact"
         onClick={() => setActiveNavbar("#contact")}
         className={activeNavbar === "#contact" ? "active" : ""}
       >

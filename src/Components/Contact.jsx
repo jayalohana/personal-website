@@ -1,47 +1,41 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 
 const Section = styled.div`
-  @media only screen and (max-width: 768px) {
-    padding: 20px;
-    text-align: center;
-  }
+`;
+
+const Container = styled.div`
+margin-top: 4.5rem;
 `;
 
 const PageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
 `;
 
-const Form = styled.div`
+const Form = styled.form`
+padding-left: 30%;
+@media screen and (max-width: 600px) {
+  padding-left: 0;
+}
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 20px;
-  // @media only screen and (max-width: 768px) {
-  //   width: 100%;
-  // }
 `;
 
 const Label = styled.label`
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;;
   font-weight: bold;
+  
 `;
 
 const Input = styled.input`
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-bottom: 10px;
-  width: 45%;
-  // @media only screen and (max-width: 768px) {
-  //   width: 100%;
-  // }
+  width: 30%;
 `;
 
 const TextArea = styled.textarea`
@@ -49,7 +43,7 @@ const TextArea = styled.textarea`
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  width: 100%;
+  width: 50%;
   height: 30vh;
 `;
 
@@ -68,34 +62,18 @@ const SubmitButton = styled.button`
 `;
 
 const Footer = styled.footer`
-  margin-top: 50%;
   padding: 10px;
   display: flex;
-  align-items: left;
   color: #fff;
-  justify-content: flex-end;
+ justify-content: center;
   font-weight: bolder;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-`;
-
-const ContactContainer = styled.div`
-  flex: 1;
-  color: #da4ea2;
+  margin-top: 2rem;
 `;
 
 const ContactLinks = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 2rem;
   color: #da4ea2;
 `;
 
@@ -133,10 +111,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_n321n2k",
-        "template_r1xqadn",
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         ref.current,
-        "VrVz8BoRgBvRw4lfz"
+        "YOUR_USER_ID"
       )
       .then(
         (result) => {
@@ -159,8 +137,7 @@ function Contact() {
 
   return (
     <Section id="Contact">
-      <PageContainer>
-        <ContactContainer>
+      <Container className="container">
           <PageWrapper>
             <Form ref={ref} onSubmit={handleSubmit}>
               <h1>send a message :)</h1>
@@ -194,8 +171,7 @@ function Contact() {
               developed by -- <Name> jaya lohana </Name> --
             </Footer>
           </PageWrapper>
-        </ContactContainer>
-      </PageContainer>
+          </Container>
     </Section>
   );
 }
