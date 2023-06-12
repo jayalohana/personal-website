@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Projects from "./Components/Projects";
@@ -8,21 +8,19 @@ import Experience from "./Components/Experience";
 import Test from "./Components/Test";
 import Navbar from "./Components/Navbar";
 import NavMobile from "./Components/NavMobile";
-import Nav from './Components/Nav';
-
-
-
+import Nav from "./Components/Nav";
 
 const MainApp = styled.div`
   color: white;
-  background: url("./img/bg.jpeg");
+  background: #190c2b;
+  // background: linear-gradient(to bottom,  #190c2b, #cd8eb3);
 `;
 
 function App() {
   return (
     <MainApp>
       <Navbar />
-     <NavMobile /> 
+      <NavMobile />
       <Hero />
       <About />
       <Projects />
@@ -33,4 +31,3 @@ function App() {
 }
 
 export default App;
-

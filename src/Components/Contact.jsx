@@ -90,7 +90,7 @@ const ContactLink = styled.a`
     color: #da4ea2;
     cursor: pointer;
   }
-  &:hover {
+  &:hover { 
     color: #c73985;
     background-color: #fff;
   }

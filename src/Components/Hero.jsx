@@ -75,6 +75,7 @@ const Button = styled.a`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
+  text-decoration: none;
 `;
 
 const Right = styled.div`
