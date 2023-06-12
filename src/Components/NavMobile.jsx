@@ -63,19 +63,21 @@ const NavMobile = () => {
         <AiOutlineUser />
       </NavItem>
       <NavItem
-        href="#Experience"
-        onClick={() => setActiveNavbar("#Experience")}
-        className={activeNavbar === "#experience" ? "active" : ""}
-      >
-        <MdWorkOutline />
-      </NavItem>
-      <NavItem
         href="#Projects"
         onClick={() => setActiveNavbar("#portfolio")}
         className={activeNavbar === "#portfolio" ? "active" : ""}
       >
         <IoIosGitNetwork />
       </NavItem>
+
+      <NavItem
+        href="#Experience"
+        onClick={() => setActiveNavbar("#Experience")}
+        className={activeNavbar === "#experience" ? "active" : ""}
+      >
+        <MdWorkOutline />
+      </NavItem>
+      
       <NavItem
         href="#Contact"
         onClick={() => setActiveNavbar("#contact")}

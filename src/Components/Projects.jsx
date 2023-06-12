@@ -26,7 +26,7 @@ const Projects = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Set the animation duration (in milliseconds)
+      duration: 1000, 
     });
   }, []);
 
