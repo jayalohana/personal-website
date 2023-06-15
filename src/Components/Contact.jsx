@@ -64,6 +64,7 @@ const SubmitButton = styled.button`
 const Footer = styled.footer`
   padding: 10px;
   display: flex;
+  font-size: 1.2rem;
   color: #fff;
  justify-content: center;
   font-weight: bolder;
@@ -99,6 +100,9 @@ const ContactLink = styled.a`
 const Name = styled.div`
   color: #da4ea2;
   font-weight: bolder;
+  &:hover { 
+    color: #fff;
+  }
 `;
 
 function Contact() {
@@ -111,10 +115,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_m52t5je",
+        "template_yfvdavi",
         ref.current,
-        "YOUR_USER_ID"
+        "VrVz8BoRgBvRw4lfz"
       )
       .then(
         (result) => {
@@ -140,7 +144,7 @@ function Contact() {
       <Container className="container">
           <PageWrapper>
             <Form ref={ref} onSubmit={handleSubmit}>
-              <h1>send a message :)</h1>
+              <h1>send a message </h1>
               <Label htmlFor="name">name:</Label>
               <Input type="text" id="name" name="name" />
               <Label htmlFor="email">email:</Label>
@@ -159,9 +163,7 @@ function Contact() {
                 <ContactLink href="https://www.linkedin.com/in/jaya-lohana/">
                   <FaLinkedin size={32} />
                 </ContactLink>
-                <ContactLink href="https://www.instagram.com/jayasdigitaldiaryy/">
-                  <FaInstagram size={32} />
-                </ContactLink>
+                
                 <ContactLink onClick={handleEmailClick}>
                   <FaEnvelope size={32} />
                 </ContactLink>
@@ -177,3 +179,8 @@ function Contact() {
 }
 
 export default Contact;
+
+
+// service id: service_m52t5je
+// template id: service_m52t5je 
+// private key: WaDj8EbF_zj2SGSy_3DA0

@@ -57,25 +57,36 @@ const Description = styled.p`
 const ButttonContainer = styled.div`
   display: flex;
   margin-top: 4.5rem;
-  text-decoration: none;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  &:hover {
-    color: #c73985;
-    background-color: #fff;
-  }
+  border: none;
+  overflow: hidden; 
+
   @media screen and (max-width: 600px) {
     display: flex;
     justify-content: center;
   }
 `;
 
-const Button = styled.a`
+const Button = styled.button`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
   text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  // padding: 8px 16px;
+  border: none;
+  outline: none;
+
+  &:hover {
+    opacity: 0.8;
+    color: #da4ea2;
+    background-color: #fff;
+  }
+
+
 `;
 
 const Right = styled.div`

@@ -34,7 +34,7 @@ export const projectsData = [
     id: 5,
     title: "Personal Website",
     description: "My personal website that features a 3D experience using Three.js library, built with React and Tailwind CSS.",
-    image: "./img/logo-cutout.png",
+    image: "./img/jaya.png",
     url: "https://github.com/jayalohana/personal-website",
   },
   {

@@ -9,6 +9,7 @@ import Test from "./Components/Test";
 import Navbar from "./Components/Navbar";
 import NavMobile from "./Components/NavMobile";
 import Nav from "./Components/Nav";
+import TestProjects from "./Components/TestProjects";
 
 const MainApp = styled.div`
   color: white;
@@ -26,6 +27,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
+      {/* <TestProjects />  */}
     </MainApp>
   );
 }

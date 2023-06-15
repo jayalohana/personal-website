@@ -23,22 +23,24 @@ const Header = styled.h1`
 `;
 
 const Projects = () => {
-
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
+      duration: 1000,
     });
   }, []);
 
   return (
     <Section id="Projects">
       <Container className="container">
-        <Header>projects</Header>
+        <Header> <h1>projects </h1> </Header>
         <Wrapper>
           {projectsData.map((project) => (
-  <ProjectCard key={project.id} project={project} data-aos="fade-up" />
-))}
-
+            <ProjectCard
+              key={project.id}
+              project={project}
+              data-aos="fade-up"
+            />
+          ))}
         </Wrapper>
       </Container>
     </Section>

@@ -27,7 +27,7 @@ const Links = styled.div`
 
 const Logo = styled.img`
 object-fit: contain;
-height: 3rem;
+height: 4rem;
 width: 5rem;
 
 `;

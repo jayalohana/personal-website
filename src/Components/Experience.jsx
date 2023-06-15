@@ -32,7 +32,7 @@ const CardDeck = styled.div`
 const ExperienceCard = styled.div`
   width: 25rem;
   color: var(--color-white);
-  background-color: #452c58;
+  background-color: #452c58;  
   border-radius: 15px;
   margin: 1rem;
   transition: transform 0.2s ease-in-out;
@@ -77,7 +77,7 @@ const Experience = () => {
   return (
     <Section id="Experience">
       <Container className="container">
-        <h1 data-aos="fade-up">Experience</h1>
+        <h1 data-aos="fade-up">experience</h1>
         <CardDeck>
           {/* Card 1 */}
           <ExperienceCard className="card" data-aos="fade-up">
