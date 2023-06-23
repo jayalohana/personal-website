@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 70%;
-  padding: 0 20px;
-  margin-bottom: 25rem;
 
-  // @media (max-width: 680px) {
-  //   text-align: center;
-  //   margin-left: 90px;
-  // }
+`;
+
+const Container = styled.div`  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 70vh;
+width: 70%;
+padding: 0 20px;
+margin-bottom: 25rem;
+
+@media (max-width: 680px) {
+  text-align: center;
+  margin-left: 90px;
+}
 `;
 
 const Header = styled.h1`
@@ -279,6 +282,7 @@ const Experience = () => {
 
   return (
     <Section id="Experience">
+      <Container >
       <Header>
         {" "}
         <h1>experience </h1>
@@ -353,6 +357,7 @@ const Experience = () => {
           </ExperienceDescription>
         </ExperienceContainer>
       </BodyContainer>
+      </Container>
     </Section>
   );
 };
