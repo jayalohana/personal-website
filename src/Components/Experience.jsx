@@ -1,249 +1,358 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { FiFolder } from "react-icons/fi";
-import { FiGithub } from "react-icons/fi";
-import { RiShareCircleLine } from "react-icons/ri";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import Gaotek from "../../public/img/Gaotek.jpeg";
-import Mgh from "../../public/img/Mgh.jpg";
-import Ssy from "../../public/img/Ssy.jpg";
-import bbi from "../../public/img/bbi.png";
-import yu from "../../public/img/yu.png";
-import YuHacks from "../../public/img/YuHacks.jpeg";
 
-const Section = styled.section``;
-
-const Container = styled.div`
+const Section = styled.section`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: stretch;
-  margin-top: 8.5rem;
+  align-items: center;
+  height: 100vh;
+  width: 70%;
+  padding: 0 20px;
+  margin-bottom: 25rem;
+
+  // @media (max-width: 680px) {
+  //   text-align: center;
+  //   margin-left: 90px;
+  // }
 `;
 
-const CardDeck = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -1rem;
-  justify-content: center;
+const Header = styled.h1`
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+
+  // @media (max-width: 680px) {
+  //   text-align: center;
+  // }
 `;
 
-const ExperienceCard = styled.div`
-  width: 25rem;
-  color: var(--color-white);
-  background-color: #452c58;  
-  border-radius: 15px;
-  margin: 1rem;
-  transition: transform 0.2s ease-in-out;
-  &:hover {
-    transform: translateY(-10px);
+const BodyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  // @media (max-width: 680px) {
+  //   margin-left: 2px;
+  //   margin-right: 2px;
+  // }
+`;
+
+const ExperienceContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  // @media (max-width: 680px) {
+  //   border: 1px solid white;
+  // }
+`;
+
+const ExperienceList = styled.div`
+  width: 350px;
+  font-size: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin; /* For Firefox */
+
+  /* Styling for the scrollbar */
+  &::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+    height: 3px; /* Height of the scrollbar */
   }
-  .card-text {
-    color: var(--color-slate);
-    font-size: 1rem;
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Color of the scrollbar track */
   }
-  .card-header {
-    a {
-      color: var(--color-slate-light);
-    }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Remove border radius */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+  }
+
+  /* New styles for scrollbar on the left side */
+  scrollbar-position: left;
+
+  // @media (max-width: 680px) {
+  //   border: 1px solid white;
+  //   display: flex;
+  //   flex-direction: row;
+  //   height: 10vh;
+  //   overflow-y: auto;
+  //   overflow-x: hidden;
+  //   scrollbar-width: thin;
+  // }
+`;
+
+const ExperienceItem = styled.div`
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+  background-color: ${(props) => (props.active ? "#da4ea2" : "transparent")};
+  position: relative;
+  border-radius: 8px;
+  color: ${(props) => (props.active ? "#fff" : "var(--lightest-slate)")};
+
+  .experience-title {
+    font-size: 3rem;
+    margin: 0 0 10px;
+    font-size: var(--fz-xxl);
+  }
+
+  a {
     display: flex;
-
     align-items: center;
-
-    img {
-      border-radius: 10px;
-      height: 6rem;
-      margin-top: 1rem;
-    }
-    span {
-      margin-left: 2rem;
-    }
+    text-decoration: none;
+    color: var(--lightest-slate);
   }
-  .job-role {
-    margin-top: 1rem;
 
-    li {
-      margin-top: 1rem;
-    }
+  .experience-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: ${(props) => (props.active ? "#da4ea2" : "var(--lightest-slate)")};
   }
+
 `;
+
+const ExperienceDescription = styled.div`
+  flex: 1;
+  font-size: 1.5rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .company-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .company-info h4 {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  // @media (max-width: 680px) {
+  //   border: 1px solid white;
+  // }
+`;
+
+const ExperienceHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+`;
+
+const ExperienceTitle = styled.h3`
+  font-size: 2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const Logo = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+`;
+
+const CompanyNameContainer = styled.div``;
+
+const CompanyName = styled.h4`
+  font-size: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const ExperienceDate = styled.p`
+  font-size: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const DescriptionList = styled.ul`
+  font-size: 1.5rem;
+  overflow: break-word;
+`;
+
+const DescriptionBulletPoint = styled.li`
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+`;
+
+const experienceData = [
+  {
+    id: 1,
+    experienceTitle: "Software Developer Intern",
+    companyName: "GaoTek",
+    date: "May 2023 - Present",
+    description: [
+      "Collaborated with the team to design and develop software features, ensuring adherence to coding standards.",
+      "Assisted in optimizing database queries and implementing efficient business logic to enhance system efficiency and reduce response time.",
+      "Assisted in implementing and maintaining backend systems, utilizing technologies such as Spring Boot and RESTful APIs.",
+    ],
+    image: "./img/Gaotek.jpeg",
+  },
+  {
+    id: 2,
+    experienceTitle: "Front-end Developer",
+    companyName: "yuHacks 2023",
+    date: "May 2023 - Present",
+    description: [
+      "Utilizing React.js, TypeScript, and Next.js to build scalable and modular components for the hackathon website, enabling efficient state management and seamless integration with the backend APIs.",
+      "Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the hackathon website, enhancing user engagement and providing real-time data updates.",
+    ],
+    image: "./img/YuHacks.jpeg",
+  },
+  {
+    id: 3,
+    experienceTitle: "UI/UX Designer",
+    companyName: "Bold Brew Insights",
+    date: "March 2022 - July 2022",
+    description: [
+      "Collaborated with the team to design and develop software features, ensuring adherence to coding standards.",
+      "Researched financial technology concepts to synthesize key findings surrounding the financial market of NFTs, blockchain technology, and national cryptocurrencies for web-content creation by using my written communication and presentation skillset.",
+    ],
+    image: "./img/bbi.png",
+  },
+  {
+    id: 4,
+    experienceTitle: "Vice President (Advocacy)",
+    companyName: "Many Green Hands",
+    date: "July 2022 - Present",
+    description: [
+      "Participating in discussions and events related to online advocacy, such as webinars, forums, and social media campaigns.",
+      "Creating and managing online content that promotes the club's mission and activities, including blog posts, social media updates, and event listings.",
+    ],
+    image: "./img/yu.png",
+  },
+  {
+    id: 5,
+    experienceTitle: "Software Developer",
+    companyName: "Schizphrenia Society at York",
+    date: "September 2022 – May 2023",
+    description: [
+      "Developed and maintained the club's website to ensure it was up-to-date, visually appealing, and easy to navigate, resulting in a positive user experience for visitors.",
+      "Created and managed online content to promote the club's mission and activities, which increased website traffic and engagement among target audiences.",
+    ],
+    image: "./img/Mgh.jpg",
+  },
+  {
+    id: 6,
+    experienceTitle: "Community Engagement Volunteer",
+    companyName: "York International",
+    date: "September 2022 – May 2023",
+    description: [
+      "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
+      "Facilitated regular community engagement and global outreach discussions, while providing peer-to-peer support and mentorship to four students over four months, resulting in significant personal and academic growth.",
+    ],
+    image: "./img/Ssy.jpg",
+  },
+  {
+    id: 7,
+    experienceTitle: "Software Developer",
+    companyName: "ABC Company",
+    date: "January 2020 - March 2022",
+    description: [
+      "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
+      "Collaborated with cross-functional teams to deliver high-quality software products.",
+      "Implemented new features and enhanced existing functionality based on user feedback.",
+    ],
+    image: "./img/Ssy.jpg",
+  },
+];
 
 const Experience = () => {
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
+  const [selectedExperience, setSelectedExperience] = useState(1);
+
+  const handleExperienceClick = (experienceId) => {
+    setSelectedExperience(experienceId);
+  };
 
   return (
     <Section id="Experience">
-      <Container className="container">
-        <h1 data-aos="fade-up">experience</h1>
-        <CardDeck>
-          {/* Card 1 */}
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={Gaotek} alt="Gaotek" />
-              </div>
-              <span>Software Developer Intern</span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">GaoTek</h5>
-              <p className="card-company">May 2023 - Present</p>
-              <ul className="job-role">
-                <li>
-                  Collaborated with the team to design and develop software
-                  features, ensuring adherence to coding standards.
-                </li>
-                <li>
-                  Assisted in optimizing database queries and implementing
-                  efficient business logic to enhance system efficiency and
-                  reduce response time.
-                </li>
-                <li>
-                  Assisted in implementing and maintaining backend systems,
-                  utilizing technologies such as Spring Boot and RESTful APIs.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-
-          {/* Card 2 */}
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={YuHacks} alt="yuHacks" />
-              </div>
-              <span>Software Developer Intern</span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">yuHacks 2023</h5>
-              <p className="card-company">May 2023 - Present</p>
-              <ul className="job-role">
-                <li>
-                  Utilizing React.js, TypeScript, and Next.js to build scalable
-                  and modular components for the hackathon website, enabling
-                  efficient state management and seamless integration with the
-                  backend APIs.
-                </li>
-
-                <li>
-                  Employing modern frontend frameworks and libraries like Vue.js
-                  and GraphQL to develop dynamic and interactive features for
-                  the hackathon website, enhancing user engagement and providing
-                  real-time data updates.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-
-          {/* Card 3 */}
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={bbi} alt="Bold Brew Insights" />
-              </div>
-              <span>UI/UX Designer</span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Bold Brew Insights</h5>
-              <p className="card-company">March 2022 - July 2022</p>
-              <ul className="job-role">
-                <li>
-                  Collaborated with the team to design and develop software
-                  features, ensuring adherence to coding standards.
-                </li>
-
-                <li>
-                  Researched financial technology concepts to synthesize key
-                  findings surrounding the financial market of NFTs, blockchain
-                  technology, and national cryptocurrencies for web-content
-                  creation by using my written communication and presentation
-                  skillset.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={Mgh} alt="Many Green Hands" />
-              </div>
-              <span>Vice President (Advocacy)</span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Many Green Hands</h5>
-              <p className="card-company">July 2022 - Present</p>
-              <ul className="job-role">
-                <li>
-                  Participating in discussions and events related to online
-                  advocacy, such as webinars, forums, and social media
-                  campaigns.
-                </li>
-                <li>
-                  Creating and managing online content that promotes the club's
-                  mission and activities, including blog posts, social media
-                  updates, and event listings.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-
-          {/* Card 6 */}
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={Ssy} alt="Schizophrenia Society York" />
-              </div>
-              <span> Software Developer </span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">Schizophrenia Society York</h5>
-              <p className="card-company">September - Present</p>
-              <ul className="job-role">
-                <li>
-                  Developed and maintained the club's website to ensure it was
-                  up-to-date, visually appealing, and easy to navigate,
-                  resulting in a positive user experience for visitors.
-                </li>
-                <li>
-                  Created and managed online content to promote the club's
-                  mission and activities, which increased website traffic and
-                  engagement among target audiences.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-
-          <ExperienceCard className="card" data-aos="fade-up">
-            <div className="card-header">
-              <div className="folder">
-                <img src={yu} alt="York International" />
-              </div>
-              <span>Community Engagement Volunteer</span>
-            </div>
-            <div className="card-body">
-              <h5 className="card-title">York International</h5>
-              <p className="card-company">September 2022 – May 2023</p>
-              <ul className="job-role">
-                <li>
-                  Promoted events, programs services, and activities to
-                  participants using social media and classroom visits to
-                  encourage participation for over 25 students on a weekly basis
-                  exercising my organization and planning skillset.
-                </li>
-                <li>
-                  Facilitated regular community engagement and global outreach
-                  discussions, while providing peer-to-peer support and
-                  mentorship to four students over four months, resulting in
-                  significant personal and academic growth.
-                </li>
-              </ul>
-            </div>
-          </ExperienceCard>
-        </CardDeck>
-      </Container>
+      <Header>
+        {" "}
+        <h1>experience </h1>
+      </Header>
+      <BodyContainer>
+        <ExperienceContainer>
+          <ExperienceList>
+            {experienceData.map((experience) => (
+              <ExperienceItem
+                key={experience.id}
+                active={selectedExperience === experience.id}
+                onClick={() => handleExperienceClick(experience.id)}
+              >
+                <div className="experience-title">
+                  {experience.experienceTitle}
+                </div>
+                {selectedExperience === experience.id && (
+                  <span className="dot" />
+                )}
+              </ExperienceItem>
+            ))}
+          </ExperienceList>
+          <ExperienceDescription>
+            {selectedExperience !== null ? (
+              <>
+                <ExperienceHeader>
+                  <ExperienceTitle>
+                    {
+                      experienceData.find(
+                        (experience) => experience.id === selectedExperience
+                      ).experienceTitle
+                    }
+                  </ExperienceTitle>
+                  <ExperienceDate>
+                    {
+                      experienceData.find(
+                        (experience) => experience.id === selectedExperience
+                      ).date
+                    }
+                  </ExperienceDate>
+                </ExperienceHeader>
+                <div className="company-info">
+                  <Logo
+                    src={
+                      experienceData.find(
+                        (experience) => experience.id === selectedExperience
+                      ).image
+                    }
+                    alt="Company Logo"
+                  />
+                  <CompanyName>
+                    {
+                      experienceData.find(
+                        (experience) => experience.id === selectedExperience
+                      ).companyName
+                    }
+                  </CompanyName>
+                </div>
+                <DescriptionList>
+                  {experienceData
+                    .find((experience) => experience.id === selectedExperience)
+                    .description.map((bulletPoint, index) => (
+                      <DescriptionBulletPoint key={index}>
+                        {bulletPoint}
+                      </DescriptionBulletPoint>
+                    ))}
+                </DescriptionList>
+              </>
+            ) : (
+              <div>Please select an experience</div>
+            )}
+          </ExperienceDescription>
+        </ExperienceContainer>
+      </BodyContainer>
     </Section>
   );
 };

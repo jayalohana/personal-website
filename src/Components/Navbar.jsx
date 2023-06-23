@@ -9,6 +9,7 @@ const Section = styled.div`
 
 const Container = styled.div`
   z-index: 1;
+  // margin-top:1rem;
   display: flex;
   position: fixed;
   backdrop-filter: blur(100px);
@@ -47,13 +48,20 @@ const ListItem = styled.li`
     text-decoration: none;
     color: #fff;
   }
+
+  &:hover {
+    transform: scale(1.2) translateY(-2px); /* Added translateY for a slight vertical movement */
+  }
+
 `;
 
 const Navbar = () => {
   return (
     <Section>
       <Container className="container">
+        <a href = "https://github.com/jayalohana">
           <Logo src={cutout}/>
+          </a>
         <Links>
           <List>
             <ListItem>
