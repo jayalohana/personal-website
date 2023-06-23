@@ -256,18 +256,18 @@ const experienceData = [
     ],
     image: "./img/Ssy.jpg",
   },
-  {
-    id: 7,
-    experienceTitle: "Software Developer",
-    companyName: "ABC Company",
-    date: "January 2020 - March 2022",
-    description: [
-      "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
-      "Collaborated with cross-functional teams to deliver high-quality software products.",
-      "Implemented new features and enhanced existing functionality based on user feedback.",
-    ],
-    image: "./img/Ssy.jpg",
-  },
+  // {
+  //   id: 7,
+  //   experienceTitle: "Software Developer",
+  //   companyName: "ABC Company",
+  //   date: "January 2020 - March 2022",
+  //   description: [
+  //     "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
+  //     "Collaborated with cross-functional teams to deliver high-quality software products.",
+  //     "Implemented new features and enhanced existing functionality based on user feedback.",
+  //   ],
+  //   image: "./img/Ssy.jpg",
+  // },
 ];
 
 const Experience = () => {
