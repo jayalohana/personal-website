@@ -7,7 +7,6 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -43,7 +43,6 @@ const ExperienceCard = styled.div`
   margin: 1rem;
   transition: transform 0.2s ease-in-out;
 
-  border :1px solid white;
   &:hover {
     transform: translateY(-10px);
   }
@@ -87,11 +86,6 @@ const ExperienceCard = styled.div`
     font-size: 0.8rem;
     margin-top: 1rem;
   }
-
-  // @media (max-width: 680px) {
-  //   margin-left: 2px;
-  //   margin-right: 2px;
-  // }
 `;
 
 const CardFooter = styled.div`

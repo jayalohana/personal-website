@@ -2,62 +2,50 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Section = styled.section`
-
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+ 
 `;
 
-const Container = styled.div`  display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 70vh;
-width: 70%;
-padding: 0 20px;
-margin-bottom: 25rem;
-
-@media (max-width: 680px) {
-  text-align: center;
-  margin-left: 90px;
-}
+const Container = styled.div`
+  @media (max-width: 680px) {
+  }
 `;
 
 const Header = styled.h1`
   text-align: center;
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-
-  // @media (max-width: 680px) {
-  //   text-align: center;
-  // }
+  margin: 0 0 8px;
+  @media (max-width: 680px) {
+    text-align: center;
+    margin: 0 0 8px;
+  }
 `;
 
 const BodyContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-  // @media (max-width: 680px) {
-  //   margin-left: 2px;
-  //   margin-right: 2px;
-  // }
+ 
 `;
 
 const ExperienceContainer = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
 
-  // @media (max-width: 680px) {
-  //   border: 1px solid white;
-  // }
+  @media (max-width: 680px) {
+    flex-direction: column;
+    font-size: 1rem;
+  }
 `;
 
 const ExperienceList = styled.div`
-  width: 350px;
   font-size: 1rem;
   max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
+
+  @media (max-width: 680px) {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+  }
   scrollbar-width: thin; /* For Firefox */
 
   /* Styling for the scrollbar */
@@ -82,15 +70,15 @@ const ExperienceList = styled.div`
   /* New styles for scrollbar on the left side */
   scrollbar-position: left;
 
-  // @media (max-width: 680px) {
-  //   border: 1px solid white;
-  //   display: flex;
-  //   flex-direction: row;
-  //   height: 10vh;
-  //   overflow-y: auto;
-  //   overflow-x: hidden;
-  //   scrollbar-width: thin;
-  // }
+  // // @media (max-width: 680px) {
+  // //   border: 1px solid white;
+  // //   display: flex;
+  // //   flex-direction: row;
+  // //   height: 10vh;
+  // //   overflow-y: auto;
+  // //   overflow-x: hidden;
+  // //   scrollbar-width: thin;
+  // // }
 `;
 
 const ExperienceItem = styled.div`
@@ -99,13 +87,13 @@ const ExperienceItem = styled.div`
   font-size: 1.5rem;
 
   background-color: ${(props) => (props.active ? "#da4ea2" : "transparent")};
-  position: relative;
+
   border-radius: 8px;
   color: ${(props) => (props.active ? "#fff" : "var(--lightest-slate)")};
 
   .experience-title {
     font-size: 3rem;
-    margin: 0 0 10px;
+
     font-size: var(--fz-xxl);
   }
 
@@ -122,6 +110,10 @@ const ExperienceItem = styled.div`
     color: ${(props) => (props.active ? "#da4ea2" : "var(--lightest-slate)")};
   }
 
+  @media (max-width: 680px) {
+    font-size: 1rem;
+    width: 40%;
+  }
 `;
 
 const ExperienceDescription = styled.div`
@@ -164,9 +156,7 @@ const Logo = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 8px;
-`;
-
-const CompanyNameContainer = styled.div``;
+`;  
 
 const CompanyName = styled.h4`
   font-size: 1rem;
@@ -282,81 +272,83 @@ const Experience = () => {
 
   return (
     <Section id="Experience">
-      <Container >
-      <Header>
-        {" "}
-        <h1>experience </h1>
-      </Header>
-      <BodyContainer>
-        <ExperienceContainer>
-          <ExperienceList>
-            {experienceData.map((experience) => (
-              <ExperienceItem
-                key={experience.id}
-                active={selectedExperience === experience.id}
-                onClick={() => handleExperienceClick(experience.id)}
-              >
-                <div className="experience-title">
-                  {experience.experienceTitle}
-                </div>
-                {selectedExperience === experience.id && (
-                  <span className="dot" />
-                )}
-              </ExperienceItem>
-            ))}
-          </ExperienceList>
-          <ExperienceDescription>
-            {selectedExperience !== null ? (
-              <>
-                <ExperienceHeader>
-                  <ExperienceTitle>
-                    {
-                      experienceData.find(
+      <Container className="container">
+        <BodyContainer>
+          <Header>
+            {" "}
+            <h1>experience </h1>
+          </Header>
+          <ExperienceContainer>
+            <ExperienceList>
+              {experienceData.map((experience) => (
+                <ExperienceItem
+                  key={experience.id}
+                  active={selectedExperience === experience.id}
+                  onClick={() => handleExperienceClick(experience.id)}
+                >
+                  <div className="experience-title">
+                    {experience.experienceTitle}
+                  </div>
+                  {selectedExperience === experience.id && (
+                    <span className="dot" />
+                  )}
+                </ExperienceItem>
+              ))}
+            </ExperienceList>
+            <ExperienceDescription>
+              {selectedExperience !== null ? (
+                <>
+                  <ExperienceHeader>
+                    <ExperienceTitle>
+                      {
+                        experienceData.find(
+                          (experience) => experience.id === selectedExperience
+                        ).experienceTitle
+                      }
+                    </ExperienceTitle>
+                    <ExperienceDate>
+                      {
+                        experienceData.find(
+                          (experience) => experience.id === selectedExperience
+                        ).date
+                      }
+                    </ExperienceDate>
+                  </ExperienceHeader>
+                  <div className="company-info">
+                    <Logo
+                      src={
+                        experienceData.find(
+                          (experience) => experience.id === selectedExperience
+                        ).image
+                      }
+                      alt="Company Logo"
+                    />
+                    <CompanyName>
+                      {
+                        experienceData.find(
+                          (experience) => experience.id === selectedExperience
+                        ).companyName
+                      }
+                    </CompanyName>
+                  </div>
+                  <DescriptionList>
+                    {experienceData
+                      .find(
                         (experience) => experience.id === selectedExperience
-                      ).experienceTitle
-                    }
-                  </ExperienceTitle>
-                  <ExperienceDate>
-                    {
-                      experienceData.find(
-                        (experience) => experience.id === selectedExperience
-                      ).date
-                    }
-                  </ExperienceDate>
-                </ExperienceHeader>
-                <div className="company-info">
-                  <Logo
-                    src={
-                      experienceData.find(
-                        (experience) => experience.id === selectedExperience
-                      ).image
-                    }
-                    alt="Company Logo"
-                  />
-                  <CompanyName>
-                    {
-                      experienceData.find(
-                        (experience) => experience.id === selectedExperience
-                      ).companyName
-                    }
-                  </CompanyName>
-                </div>
-                <DescriptionList>
-                  {experienceData
-                    .find((experience) => experience.id === selectedExperience)
-                    .description.map((bulletPoint, index) => (
-                      <DescriptionBulletPoint key={index}>
-                        {bulletPoint}
-                      </DescriptionBulletPoint>
-                    ))}
-                </DescriptionList>
-              </>
-            ) : (
-              <div>Please select an experience</div>
-            )}
-          </ExperienceDescription>
-        </ExperienceContainer>
-      </BodyContainer>
+                      )
+                      .description.map((bulletPoint, index) => (
+                        <DescriptionBulletPoint key={index}>
+                          {bulletPoint}
+                        </DescriptionBulletPoint>
+                      ))}
+                  </DescriptionList>
+                </>
+              ) : (
+                <div>Please select an experience</div>
+              )}
+            </ExperienceDescription>
+          </ExperienceContainer>
+        </BodyContainer>
       </Container>
     </Section>
   );
