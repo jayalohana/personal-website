@@ -14,8 +14,12 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  text-align: center;
-  margin: 0 0 8px;
+font-size: 4rem;
+margin-bottom: 1rem;
+font-weight: 700;
+margin-left: 1rem;
+// align-text: center;
+letter-spacing: -0.05em;
   @media (max-width: 680px) {
     text-align: center;
     margin: 0 0 8px;

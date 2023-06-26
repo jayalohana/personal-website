@@ -15,6 +15,13 @@ import pink from "../../public/img/pink.png";
 
 const Section = styled.section``;
 
+const Header = styled.h1`
+margin-bottom: 1rem;
+margin-right: 1000px;
+text-align: left;
+letter-spacing: -0.05em;
+`;
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +62,7 @@ const ExperienceCard = styled.div`
       color: var(--color-slate-light);
       text-decoration: none;
       display: flex;
-      align-items: center;
+      // align-items: center;
       transition: color 0.2s ease-in-out;
       margin-left: 90px;
     }
@@ -71,6 +78,7 @@ const ExperienceCard = styled.div`
     }
     span {
       margin-left: 2rem;
+      border: 1px solid white;
     }
   }
   .job-role {
@@ -150,7 +158,9 @@ const TestProjects = () => {
   return (
     <Section id="Projects">
       <Container className="container">
+        <Header>
         <h1 data-aos="fade-up">projects</h1>
+        </Header>
         <CardDeck>
           {projects.map((project, index) => (
             <ExperienceCard className="card" data-aos="fade-up" key={index}>

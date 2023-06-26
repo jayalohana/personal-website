@@ -84,7 +84,7 @@ const About = () => {
     <Section>
       <Container id="About" className="container">
         <Left>
-          <Title> <h1>about me </h1></Title>
+          <Title> <h1> about me </h1></Title>
           <Introduction>
             hi, i'm Jaya Lohana, a second year computer science student at york
             university. passionate about coding and technology, i'm excited to
@@ -94,17 +94,17 @@ const About = () => {
         </Left>
         <Right>
           <SkillsContainer>
-            <SkillsTitle> <h2>technical skills </h2></SkillsTitle>
+            <SkillsTitle> <h2> technical skills </h2></SkillsTitle>
             <SkillsList>
               <ul>
                 <li> < BiCaretRight /> React.js</li>
                 <li> < BiCaretRight /> Three.js</li>
-                <li> < BiCaretRight />Node.js</li>
-                <li> < BiCaretRight />JavaScript</li>
-                <li> < BiCaretRight />Java</li>
-                <li> < BiCaretRight />Python</li>
-                <li> < BiCaretRight />REST APIs</li>
-                <li> < BiCaretRight />GraphQL</li>
+                <li> < BiCaretRight /> Node.js</li>
+                <li> < BiCaretRight /> JavaScript</li>
+                <li> < BiCaretRight /> Java</li>
+                <li> < BiCaretRight /> Python</li>
+                <li> < BiCaretRight /> REST APIs</li>
+                <li> < BiCaretRight /> GraphQL</li>
                 {/* <li>MUI</li>
                 <li>SQL</li> */}
               </ul>
