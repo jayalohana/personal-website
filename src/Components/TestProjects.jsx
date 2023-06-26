@@ -78,7 +78,6 @@ const ExperienceCard = styled.div`
     }
     span {
       margin-left: 2rem;
-      border: 1px solid white;
     }
   }
   .job-role {
