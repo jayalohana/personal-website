@@ -9,6 +9,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
+
   @media (max-width: 680px) {
   }
 `;
@@ -198,19 +199,31 @@ const experienceData = [
     ],
     image: "./img/Gaotek.jpeg",
   },
-  {
-    id: 2,
-    experienceTitle: "Front-end Developer",
-    companyName: "yuHacks 2023",
-    date: "May 2023 - Present",
-    description: [
-      "Utilizing React.js, TypeScript, and Next.js to build scalable and modular components for the hackathon website, enabling efficient state management and seamless integration with the backend APIs.",
-      "Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the hackathon website, enhancing user engagement and providing real-time data updates.",
-    ],
-    image: "./img/YuHacks.jpeg",
-  },
+  // {
+  //   id: 2,
+  //   experienceTitle: "Front-end Developer",
+  //   companyName: "yuHacks 2023",
+  //   date: "May 2023 - Present",
+  //   description: [
+  //     "Utilizing React.js, TypeScript, and Next.js to build scalable and modular components for the hackathon website, enabling efficient state management and seamless integration with the backend APIs.",
+  //     "Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the hackathon website, enhancing user engagement and providing real-time data updates.",
+  //   ],
+  //   image: "./img/YuHacks.jpeg",
+  // },
   {
     id: 3,
+    experienceTitle: "Outreach Executive",
+    companyName: "hEr VOLUTION",
+    date: "May 2023 - Present",
+    description: [
+      "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
+      "Collaborated with cross-functional teams to deliver high-quality software products.",
+      "Implemented new features and enhanced existing functionality based on user feedback.",
+    ],
+    image: "./img/herv.png",
+  },
+  {
+    id: 4,
     experienceTitle: "UI/UX Designer",
     companyName: "Bold Brew Insights",
     date: "March 2022 - July 2022",
@@ -221,7 +234,7 @@ const experienceData = [
     image: "./img/bbi.png",
   },
   {
-    id: 4,
+    id: 5,
     experienceTitle: "Vice President (Advocacy)",
     companyName: "Many Green Hands",
     date: "July 2022 - Present",
@@ -232,7 +245,7 @@ const experienceData = [
     image: "./img/yu.png",
   },
   {
-    id: 5,
+    id: 6,
     experienceTitle: "Software Developer",
     companyName: "Schizphrenia Society at York",
     date: "September 2022 – May 2023",
@@ -243,7 +256,7 @@ const experienceData = [
     image: "./img/Mgh.jpg",
   },
   {
-    id: 6,
+    id: 7,
     experienceTitle: "Community Engagement Volunteer",
     companyName: "York International",
     date: "September 2022 – May 2023",
@@ -254,7 +267,7 @@ const experienceData = [
     image: "./img/Ssy.jpg",
   },
   // {
-  //   id: 7,
+  //   id: 8,
   //   experienceTitle: "Software Developer",
   //   companyName: "ABC Company",
   //   date: "January 2020 - March 2022",
