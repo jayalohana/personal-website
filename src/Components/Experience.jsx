@@ -216,9 +216,9 @@ const experienceData = [
     companyName: "hEr VOLUTION",
     date: "May 2023 - Present",
     description: [
-      "Promoted events, programs services, and activities to participants using social media and classroom visits to encourage participation for over 25 students on a weekly basisexercising my organization and planning skillset.",
-      "Collaborated with cross-functional teams to deliver high-quality software products.",
-      "Implemented new features and enhanced existing functionality based on user feedback.",
+      "Organized and coordinated 5 successful community events, including tech fairs and networking sessions, with an average attendance of 200 participants per event.",
+      "Developed and published 20 pieces of compelling content for newsletters, blogs, and social media posts, reaching an audience of over 10,000 individuals.",
+      "Mentored and supported 10 volunteers and interns, ensuring their active involvement in outreach activities.",
     ],
     image: "./img/herv.png",
   },
