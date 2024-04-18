@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import cutout from '../../public/img/cutout.png'
+import cutout from "../../public/img/cutout.png";
 
 const Section = styled.div`
   display: flex;
@@ -27,10 +27,9 @@ const Links = styled.div`
 `;
 
 const Logo = styled.img`
-object-fit: contain;
-height: 4rem;
-width: 5rem;
-
+  object-fit: contain;
+  height: 4rem;
+  width: 5rem;
 `;
 
 const List = styled.ul`
@@ -52,16 +51,15 @@ const ListItem = styled.li`
   &:hover {
     transform: scale(1.2) translateY(-2px); /* Added translateY for a slight vertical movement */
   }
-
 `;
 
 const Navbar = () => {
   return (
     <Section>
       <Container className="container">
-        <a href = "https://github.com/jayalohana">
-          <Logo src={cutout}/>
-          </a>
+        <a href="https://github.com/jayalohana">
+          <Logo src={cutout} />
+        </a>
         <Links>
           <List>
             <ListItem>

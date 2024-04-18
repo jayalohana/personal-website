@@ -70,17 +70,15 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Button = styled.a`
+const Button = styled.button`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
-  text-decoration: none;
   cursor: pointer;
   display: inline-block;
   padding: 8px 16px;
   border: none;
   outline: none;
-  border-radius: 5px; // Added for consistency with button style
 
   &:hover {
     opacity: 0.8;
@@ -131,13 +129,8 @@ const Hero = () => {
                 with new frameworks and developing my skills.
               </Description>
               <ButtonContainer>
-                <Button
-                  className="btn btn-primary btn-lg"
-                  role="button"
-                  href={Jaya_Lohana}
-                  download="Jaya_Lohana.pdf" // This will prompt the file to download
-                >
-                  Resume
+                <Button className="btn btn-primary btn-lg" role="button">
+                  <a href={Jaya_Lohana}> Resume </a>
                 </Button>
               </ButtonContainer>
             </Left>
