@@ -62,7 +62,7 @@ const ButttonContainer = styled.div`
   cursor: pointer;
   outline: none;
   border: none;
-  overflow: hidden; 
+  overflow: hidden;
 
   @media screen and (max-width: 600px) {
     display: flex;
@@ -86,8 +86,6 @@ const Button = styled.button`
     color: #da4ea2;
     background-color: #fff;
   }
-
-
 `;
 
 const Right = styled.div`

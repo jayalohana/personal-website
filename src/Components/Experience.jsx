@@ -5,31 +5,27 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 200px;
- 
 `;
 
 const Container = styled.div`
-
   @media (max-width: 680px) {
   }
 `;
 
 const Header = styled.h1`
-font-size: 4rem;
-margin-bottom: 1rem;
-font-weight: 700;
-margin-left: 1rem;
-// align-text: center;
-letter-spacing: -0.05em;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  margin-left: 1rem;
+  // align-text: center;
+  letter-spacing: -0.05em;
   @media (max-width: 680px) {
     text-align: center;
     margin: 0 0 8px;
   }
 `;
 
-const BodyContainer = styled.div`
- 
-`;
+const BodyContainer = styled.div``;
 
 const ExperienceContainer = styled.div`
   display: flex;
@@ -161,7 +157,7 @@ const Logo = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 8px;
-`;  
+`;
 
 const CompanyName = styled.h4`
   font-size: 1rem;
@@ -189,9 +185,21 @@ const DescriptionBulletPoint = styled.li`
 const experienceData = [
   {
     id: 1,
+    experienceTitle: "QA Analyst",
+    companyName: "Transformers Academy",
+    date: "April 2024 – Present",
+    description: [
+      "Led the deployment of automated testing tools to streamline content validation processes, reducing manual testing time by 40% and enhancing overall content accuracy.",
+      "Pioneered a feedback integration system that captures real-time user interactions, providing critical insights that have led to a 25% improvement in user satisfaction scores.",
+    ],
+    image: "./img/ta.webp",
+  },
+
+  {
+    id: 2,
     experienceTitle: "Software Developer Intern",
     companyName: "GaoTek",
-    date: "May 2023 - Present",
+    date: "May 2023 - September 2023",
     description: [
       "Collaborated with the team to design and develop software features, ensuring adherence to coding standards.",
       "Assisted in optimizing database queries and implementing efficient business logic to enhance system efficiency and reduce response time.",
@@ -199,53 +207,19 @@ const experienceData = [
     ],
     image: "./img/Gaotek.jpeg",
   },
-  // {
-  //   id: 2,
-  //   experienceTitle: "Front-end Developer",
-  //   companyName: "yuHacks 2023",
-  //   date: "May 2023 - Present",
-  //   description: [
-  //     "Utilizing React.js, TypeScript, and Next.js to build scalable and modular components for the hackathon website, enabling efficient state management and seamless integration with the backend APIs.",
-  //     "Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the hackathon website, enhancing user engagement and providing real-time data updates.",
-  //   ],
-  //   image: "./img/YuHacks.jpeg",
-  // },
   {
     id: 3,
-    experienceTitle: "Outreach Executive",
-    companyName: "hEr VOLUTION",
-    date: "May 2023 - Present",
+    experienceTitle: "Front-end Developer",
+    companyName: "yuHacks 2023",
+    date: "May 2023 - December 2023",
     description: [
-      "Organized and coordinated 5 successful community events, including tech fairs and networking sessions, with an average attendance of 200 participants per event.",
-      "Developed and published 20 pieces of compelling content for newsletters, blogs, and social media posts, reaching an audience of over 10,000 individuals.",
-      "Mentored and supported 10 volunteers and interns, ensuring their active involvement in outreach activities.",
+      "Utilizing React.js, TypeScript, and Next.js to build scalable and modular components for the hackathon website, enabling efficient state management and seamless integration with the backend APIs.",
+      "Employing modern frontend frameworks and libraries like Vue.js and GraphQL to develop dynamic and interactive features for the hackathon website, enhancing user engagement and providing real-time data updates.",
     ],
-    image: "./img/herv.png",
+    image: "./img/YuHacks.jpeg",
   },
   {
     id: 4,
-    experienceTitle: "UI/UX Designer",
-    companyName: "Bold Brew Insights",
-    date: "March 2022 - July 2022",
-    description: [
-      "Collaborated with the team to design and develop software features, ensuring adherence to coding standards.",
-      "Researched financial technology concepts to synthesize key findings surrounding the financial market of NFTs, blockchain technology, and national cryptocurrencies for web-content creation by using my written communication and presentation skillset.",
-    ],
-    image: "./img/bbi.png",
-  },
-  {
-    id: 5,
-    experienceTitle: "Vice President (Advocacy)",
-    companyName: "Many Green Hands",
-    date: "July 2022 - Present",
-    description: [
-      "Participating in discussions and events related to online advocacy, such as webinars, forums, and social media campaigns.",
-      "Creating and managing online content that promotes the club's mission and activities, including blog posts, social media updates, and event listings.",
-    ],
-    image: "./img/yu.png",
-  },
-  {
-    id: 6,
     experienceTitle: "Software Developer",
     companyName: "Schizphrenia Society at York",
     date: "September 2022 – May 2023",
@@ -256,7 +230,42 @@ const experienceData = [
     image: "./img/Mgh.jpg",
   },
   {
+    id: 5,
+    experienceTitle: "Outreach Executive",
+    companyName: "hEr VOLUTION",
+    date: "May 2023 - February 2024",
+    description: [
+      "Organized and coordinated 5 successful community events, including tech fairs and networking sessions, with an average attendance of 200 participants per event.",
+      "Developed and published 20 pieces of compelling content for newsletters, blogs, and social media posts, reaching an audience of over 10,000 individuals.",
+      "Mentored and supported 10 volunteers and interns, ensuring their active involvement in outreach activities.",
+    ],
+    image: "./img/herv.png",
+  },
+  {
+    id: 6,
+    experienceTitle: "UI/UX Designer",
+    companyName: "Bold Brew Insights",
+    date: "March 2022 - July 2022",
+    description: [
+      "Collaborated with the team to design and develop software features, ensuring adherence to coding standards.",
+      "Researched financial technology concepts to synthesize key findings surrounding the financial market of NFTs, blockchain technology, and national cryptocurrencies for web-content creation by using my written communication and presentation skillset.",
+    ],
+    image: "./img/bbi.png",
+  },
+  {
     id: 7,
+    experienceTitle: "Vice President (Advocacy)",
+    companyName: "Many Green Hands",
+    date: "July 2022 - Present",
+    description: [
+      "Participating in discussions and events related to online advocacy, such as webinars, forums, and social media campaigns.",
+      "Creating and managing online content that promotes the club's mission and activities, including blog posts, social media updates, and event listings.",
+    ],
+    image: "./img/yu.png",
+  },
+
+  {
+    id: 8,
     experienceTitle: "Community Engagement Volunteer",
     companyName: "York International",
     date: "September 2022 – May 2023",

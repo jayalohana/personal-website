@@ -5,21 +5,24 @@ import { FiGithub } from "react-icons/fi";
 import { RiShareCircleLine } from "react-icons/ri";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import sudoku from "../../public/img/sudoku.png"
+import sudoku from "../../public/img/sudoku.png";
 import jaya from "../../public/img/jaya.png";
 import Ssy from "../../public/img/Ssy.jpg";
 import todo from "../../public/img/todo.png";
 import blog from "../../public/img/blog.png";
-import weather from "../../public/img/weather.png"
+import weather from "../../public/img/weather.png";
 import pink from "../../public/img/pink.png";
+import notably from "../../public/img/notably.png";
+import cowrite from "../../public/img/cowrite.png";
+import autosyncer from "../../public/img/autosyncer.jpeg";
 
 const Section = styled.section``;
 
 const Header = styled.h1`
-margin-bottom: 1rem;
-margin-right: 1000px;
-text-align: left;
-letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+  margin-right: 1000px;
+  text-align: left;
+  letter-spacing: -0.05em;
 `;
 
 const Container = styled.div`
@@ -109,33 +112,73 @@ const TestProjects = () => {
 
   const projects = [
     {
+      name: "Notably",
+      image: notably,
+      technologies: ["TypeScript", "React.js", "Node.js", "MongoDB"],
+      githubLink: "https://github.com/jayalohana/Notably",
+      description:
+        "Leveraged TypeScript for static type checking, ensuring robust and maintainable code throughout the development process. Designed an interactive task and note management application using React.js for the frontend, Node.js for backend scalability, and MongoDB for data storage, ensuring a smooth user experience.",
+    },
+    {
+      name: "CoWrite",
+      image: cowrite,
+      technologies: [
+        "React.js",
+        "Socket.io",
+        "Quill",
+        "Material-UI",
+        "MongoDB",
+      ],
+      githubLink: "https://github.com/jayalohana/CoWrite",
+      description:
+        "Developed a collaborative document editing platform using React.js, facilitating simultaneous editing by multiple users. Implemented live updates using Socket.io, utilized Quill for the editing interface, Material-UI for the user interface design, and MongoDB for backend data storage.",
+    },
+    {
+      name: "autosyncer",
+      image: autosyncer,
+      technologies: [
+        "Next.js",
+        "Clerk Authentication",
+        "Neon Tech",
+        "Uploadcare",
+        "Ngrok",
+        "Stripe",
+      ],
+      githubLink: "https://github.com/jayalohana/AutoSyncer",
+      description:
+        "SAAS Automation Builder that enhances workflow efficiencies by integrating Clerk Authentication, Neon Tech, Uploadcare, and Ngrok. Built using Next.js 14, featuring secure Stripe payment integrations for a seamless user experience.",
+    },
+    {
       name: "The Blog Spot",
       image: blog,
       technologies: ["MongoDB", "Express", "React", "Node.js"],
       githubLink: "https://www.example.com/project4",
       description:
-      "A full-stack blog application that utilizes MongoDB, Express, React, and Node.js to create, read, update, and delete blog posts.",
+        "A full-stack blog application that utilizes MongoDB, Express, React, and Node.js to create, read, update, and delete blog posts.",
     },
     {
       name: "Personal Website",
       image: pink,
       technologies: ["React", "Tailwind CSS", "Three.js"],
       githubLink: "https://github.com/jayalohana/personal-website",
-      description: "My personal website that features a 3D experience using Three.js library, built with React and Tailwind CSS.",
+      description:
+        "My personal website that features a 3D experience using Three.js library, built with React and Tailwind CSS.",
     },
     {
       name: "Todo List",
       image: todo,
       technologies: ["React"],
-      githubLink:"https://github.com/jayalohana/react-todo",
-      description: "A React-based to-do list web application for managing tasks and projects. ",
+      githubLink: "https://github.com/jayalohana/react-todo",
+      description:
+        "A React-based to-do list web application for managing tasks and projects. ",
     },
     {
       name: "Weather App",
       image: weather,
       technologies: ["React", "API"],
       githubLink: "https://www.example.com/project2",
-      description: "A weather app that utilizes APIs to fetch and display weather data for user-selected locations.",
+      description:
+        "A weather app that utilizes APIs to fetch and display weather data for user-selected locations.",
     },
     {
       name: "Schizophrenia Society Website",
@@ -143,14 +186,15 @@ const TestProjects = () => {
       technologies: ["React", "Tailwind CSS"],
       githubLink: "https://github.com/jayalohana/ssy-website",
       description:
-      "A responsive website developed with React and styled with Tailwind CSS that presents your work and expertise, with a mobile-first approach for seamless navigation on any device.",
+        "A responsive website developed with React and styled with Tailwind CSS that presents your work and expertise, with a mobile-first approach for seamless navigation on any device.",
     },
     {
       name: "Sudoku Solver",
       image: sudoku,
       technologies: ["Python"],
       githubLink: "https://github.com/jayalohana/Sudoku",
-      description: "A Python-based Sudoku solver that utilizes algorithms and logic to find the solution for any given puzzle.",
+      description:
+        "A Python-based Sudoku solver that utilizes algorithms and logic to find the solution for any given puzzle.",
     },
   ];
 
@@ -158,7 +202,7 @@ const TestProjects = () => {
     <Section id="Projects">
       <Container className="container">
         <Header>
-        <h1 data-aos="fade-up">projects</h1>
+          <h1 data-aos="fade-up">projects</h1>
         </Header>
         <CardDeck>
           {projects.map((project, index) => (
@@ -168,7 +212,11 @@ const TestProjects = () => {
                   <img src={project.image} alt={project.name} />
                 </div>
                 <span>{project.name}</span>
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FiGithub style={{ marginLeft: "auto" }} />
                 </a>
               </div>
@@ -177,10 +225,10 @@ const TestProjects = () => {
                   <li>{project.description}</li>
                 </ul>
                 <CardFooter>
-                <div className="technologies">
-                  Technologies used: {project.technologies.join(", ")}
-                </div>
-              </CardFooter>
+                  <div className="technologies">
+                    Technologies used: {project.technologies.join(", ")}
+                  </div>
+                </CardFooter>
               </div>
             </ExperienceCard>
           ))}
