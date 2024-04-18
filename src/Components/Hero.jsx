@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import NavMobile from "./NavMobile";
-import Jaya_Lohana_Website from "../assets/Jaya_Lohana_Website.pdf";
+import Jaya_Lohana from "../assets/Jaya_Lohana.pdf";
 
 const Section = styled.div`
   min-height: 80vh;
@@ -55,7 +55,7 @@ const Description = styled.p`
   text-align: left;
 `;
 
-const ButttonContainer = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
   margin-top: 4.5rem;
   border-radius: 5px;
@@ -70,21 +70,22 @@ const ButttonContainer = styled.div`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  // padding: 8px 16px;
+  padding: 8px 16px;
   border: none;
   outline: none;
+  border-radius: 5px; // Added for consistency with button style
 
   &:hover {
     opacity: 0.8;
-    color: #da4ea2;
-    background-color: #fff;
+    color: #fff;
+    background-color: #da4ea2;
   }
 `;
 
@@ -129,15 +130,16 @@ const Hero = () => {
                 second-year computer science student who loves experimenting
                 with new frameworks and developing my skills.
               </Description>
-              <ButttonContainer>
+              <ButtonContainer>
                 <Button
                   className="btn btn-primary btn-lg"
                   role="button"
-                  href={Jaya_Lohana_Website}
+                  href={Jaya_Lohana}
+                  download="Jaya_Lohana.pdf" // This will prompt the file to download
                 >
                   Resume
                 </Button>
-              </ButttonContainer>
+              </ButtonContainer>
             </Left>
           </div>
           <div className="col-md-6">
